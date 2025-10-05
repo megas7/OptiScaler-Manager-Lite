@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files"><UniqueIdentifier>{F2D9B56B-5F3F-45B1-8A66-2CDAE4B2B100}</UniqueIdentifier></Filter>
+    <Filter Include="Header Files"><UniqueIdentifier>{5C9F5E84-6C4F-4B53-AD15-F3C8D7B89E01}</UniqueIdentifier></Filter>
+    <Filter Include="Resources"><UniqueIdentifier>{73C6A3C5-DF7F-46E6-8D11-40B5A9D7B202}</UniqueIdentifier></Filter>
+    <Filter Include="Third Party"><UniqueIdentifier>{B4E1C9E8-1A0C-4B61-BCC2-2A7E4A9D77AA}</UniqueIdentifier></Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\**\*.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\**\*.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\json.hpp">
+      <Filter>Third Party</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\app.rc">
+      <Filter>Resources</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

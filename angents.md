@@ -12,7 +12,17 @@ Create a **standalone** Windows desktop app (no .NET/MFC) that scans installed P
 - System info: **DXGI** (GPU); Win32 for CPU/RAM.
 - File I/O & COM: standard Win32/COM. No heavy deps.
 - JSON: use **single-header** `nlohmann/json.hpp` (bundle into `third_party/`) for IGDB/Twitch responses.
-- Build: **CMake** (Visual Studio 2022, x64). Link to: `Windowscodecs, Shell32, Shlwapi, Winhttp, Version, Ole32, uuid, comctl32, d3d12, d3d11, dxgi, d2d1, dwrite`.
+
+# VS 2022 .sln + .vcxproj prompt (no CMake)
+Paste this into Codex to generate a solution + project wired for OptiScalerMgr Lite.
+
+- One Win32 GUI app project
+- C++17, Unicode, /permissive-, /utf-8, /Zc:__cplusplus
+- Include dirs: $(ProjectDir)src; $(ProjectDir)third_party
+- Link libs: comctl32; Windowscodecs; Shell32; Shlwapi; Winhttp; Version; Ole32; Uuid; d3d12; d3d11; dxgi; d2d1; Dwrite
+- Recursive item includes and app.rc as resource
+
+Templates are included in this zip as: OptiScalerMgrLite.vcxproj and OptiScalerMgrLite.vcxproj.filters.
 
 ## UI requirements
 - Main window with:
