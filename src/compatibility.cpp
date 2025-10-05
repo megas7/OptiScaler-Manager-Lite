@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <cctype>
 #include <chrono>
+#include <cwctype>
 #include <filesystem>
 #include <optional>
 #include <sstream>
@@ -23,6 +24,10 @@ namespace optiscaler {
 namespace {
 
 using json = nlohmann::json;
+
+#ifndef HTTP_STATUS_TOO_MANY_REQUESTS
+#define HTTP_STATUS_TOO_MANY_REQUESTS 429
+#endif
 
 std::wstring WideFromUtf8(const std::string& utf8) {
   if (utf8.empty()) {
@@ -72,7 +77,7 @@ std::wstring SlugFromTitle(const std::wstring& title) {
   for (wchar_t ch : title) {
     if (ch == L' ') {
       slug.push_back(L'-');
-    } else if (std::iswalnum(ch) || ch == L'-' || ch == L'_') {
+    } else if (iswalnum(ch) || ch == L'-' || ch == L'_') {
       slug.push_back(ch);
     }
   }
@@ -591,7 +596,7 @@ std::wstring NormalizeToken(const std::wstring& value) {
   std::wstring lower = ToLower(value);
   std::wstring normalized;
   for (wchar_t ch : lower) {
-    if (std::iswalnum(ch)) {
+    if (iswalnum(ch)) {
       normalized.push_back(ch);
     }
   }
@@ -614,7 +619,7 @@ bool LoadCompatibilityCache(CompatibilityCache& cache) {
   }
   try {
     json doc = json::parse(Utf8FromWide(jsonText));
-    if (doc.contains("profiles")) {
+    if (doc.contains("profiles") && doc["profiles"].is_array()) {
       for (const auto& item : doc["profiles"]) {
         CompatibilityProfile profile;
         profile.pageName = WideFromUtf8(item.value("pageName", ""));
@@ -635,16 +640,23 @@ bool LoadCompatibilityCache(CompatibilityCache& cache) {
         profile.testedVersion = WideFromUtf8(item.value("testedVersion", ""));
         profile.os = WideFromUtf8(item.value("os", ""));
         profile.gpu = WideFromUtf8(item.value("gpu", ""));
-        if (item.contains("settings")) {
+        if (item.contains("settings") && item["settings"].is_object()) {
           const auto& settings = item["settings"];
-          for (const auto& kv : settings.value("requiredIni", json::object())) {
-            profile.settings.requiredIni[WideFromUtf8(kv.first)] = WideFromUtf8(kv.second.get<std::string>());
+          if (settings.contains("requiredIni") && settings["requiredIni"].is_object()) {
+            const auto& required = settings["requiredIni"];
+            for (auto it = required.begin(); it != required.end(); ++it) {
+              profile.settings.requiredIni[WideFromUtf8(it.key())] =
+                  WideFromUtf8(it.value().get<std::string>());
+            }
           }
-          for (const auto& kv : settings.value("fgIni", json::object())) {
-            profile.settings.fgIni[WideFromUtf8(kv.first)] = WideFromUtf8(kv.second.get<std::string>());
+          if (settings.contains("fgIni") && settings["fgIni"].is_object()) {
+            const auto& fg = settings["fgIni"];
+            for (auto it = fg.begin(); it != fg.end(); ++it) {
+              profile.settings.fgIni[WideFromUtf8(it.key())] = WideFromUtf8(it.value().get<std::string>());
+            }
           }
         }
-        if (item.contains("notes")) {
+        if (item.contains("notes") && item["notes"].is_object()) {
           const auto& notes = item["notes"];
           profile.notes.requiresFakenvapi = notes.value("requiresFakenvapi", false);
           profile.notes.optiFgSupported = notes.value("optiFgSupported", true);
@@ -665,9 +677,9 @@ bool LoadCompatibilityCache(CompatibilityCache& cache) {
         for (const auto& warn : item.value("parseWarnings", std::vector<std::string>{})) {
           profile.parseWarnings.push_back(WideFromUtf8(warn));
         }
-    cache.profiles.push_back(std::move(profile));
-  }
-}
+        cache.profiles.push_back(std::move(profile));
+      }
+    }
     cache.meta.fetchedUtc = WideFromUtf8(doc.value("fetchedUtc", ""));
     cache.meta.sourceUrl = WideFromUtf8(doc.value("sourceUrl", ""));
     cache.meta.etag = WideFromUtf8(doc.value("etag", ""));
