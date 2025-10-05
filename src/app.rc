@@ -1,0 +1,19 @@
+#include <windows.h>
+#include "resource.h"
+
+IDC_MAINMENU MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Rescan", IDM_FILE_RESCAN
+        MENUITEM "E&xit", IDM_FILE_EXIT
+    END
+    POPUP "&Tools"
+    BEGIN
+        MENUITEM "&Settings...", IDM_TOOLS_SETTINGS
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "Open &Logs Folder", IDM_HELP_LOGS
+    END
+END
