@@ -17,6 +17,7 @@ struct GameEntry {
   HBITMAP coverBmp = nullptr;
   bool injectEnabled = false;
   std::vector<std::wstring> plannedFiles;
+  std::wstring supportSummary;
 };
 
 }  // namespace optiscaler
