@@ -3,6 +3,8 @@
 #include <filesystem>
 #include <cwctype>
 
+#include <cstdint>
+
 #include <wincodec.h>
 
 #include "cache.h"
@@ -10,6 +12,9 @@
 namespace optiscaler {
 
 namespace {
+constexpr uint64_t kHashOffset = 1469598103934665603ull;
+constexpr uint64_t kHashPrime = 1099511628211ull;
+=======
 constexpr int kHashOffset = 1469598103934665603ull;
 constexpr int kHashPrime = 1099511628211ull;
 
