@@ -1,8 +1,12 @@
 #include "scanner.h"
 
 #include <algorithm>
+#include <cwchar>
 #include <cwctype>
 #include <filesystem>
+#include <fstream>
+#include <iterator>
+#include <unordered_map>
 #include <unordered_set>
 
 #include <windows.h>
@@ -13,12 +17,30 @@ namespace {
 
 constexpr size_t kMaxScanDepth = 4;
 
+struct SteamInstallInfo {
+  uint32_t app_id = 0;
+  std::wstring name;
+  std::wstring folder;
+  std::wstring normalized_prefix;
+};
+
 std::wstring ToLower(const std::wstring& value) {
   std::wstring lower(value);
   std::transform(lower.begin(), lower.end(), lower.begin(), [](wchar_t ch) {
     return static_cast<wchar_t>(std::towlower(ch));
   });
   return lower;
+}
+
+std::wstring NormalizeForComparison(const std::filesystem::path& path,
+                                    bool append_separator) {
+  std::wstring normalized = path.lexically_normal().native();
+  std::replace(normalized.begin(), normalized.end(), L'/', L'\\');
+  normalized = ToLower(normalized);
+  if (append_separator && !normalized.empty() && normalized.back() != L'\\') {
+    normalized.push_back(L'\\');
+  }
+  return normalized;
 }
 
 bool ShouldSkipExecutable(const std::wstring& filename_lower) {
@@ -36,6 +58,19 @@ bool ShouldSkipExecutable(const std::wstring& filename_lower) {
       L"crashhandler", L"crashreporter", L"unitycrash", L"eac_launcher", L"unrealcefsubprocess"};
   for (const auto* substring : kSubstrings) {
     if (filename_lower.find(substring) != std::wstring::npos) {
+      return true;
+    }
+  }
+  return false;
+}
+
+bool ShouldSkipPath(const std::filesystem::path& path) {
+  std::wstring path_lower = ToLower(path.lexically_normal().native());
+  constexpr const wchar_t* kIgnored[] = {
+      L"\\_commonredist\\", L"\\commonredist\\", L"\\redist\\", L"\\redistributable\\",
+      L"\\support\\",       L"\\vc_redist\\",   L"\\tools\\",  L"\\extras\\"};
+  for (const auto* needle : kIgnored) {
+    if (path_lower.find(needle) != std::wstring::npos) {
       return true;
     }
   }
@@ -65,37 +100,6 @@ std::wstring DisplayNameFromStem(std::wstring stem) {
   return stem;
 }
 
-void AppendIfExists(std::vector<std::wstring>& roots, std::wstring path) {
-  if (path.empty()) {
-    return;
-  }
-  std::filesystem::path fs_path(std::move(path));
-  std::error_code ec;
-  if (std::filesystem::exists(fs_path, ec)) {
-    roots.emplace_back(fs_path.lexically_normal().wstring());
-  }
-}
-
-std::wstring GetEnvVar(const wchar_t* name) {
-  const DWORD needed = GetEnvironmentVariableW(name, nullptr, 0);
-  if (needed <= 1) {
-    return {};
-  }
-  std::wstring value;
-  value.resize(needed - 1);
-  DWORD written = GetEnvironmentVariableW(name, value.data(), needed);
-  if (written == 0) {
-    return {};
-  }
-  value.resize(written);
-  return value;
-}
-
-}  // namespace
-
-std::vector<GameEntry> Scanner::ScanAll(const std::vector<std::wstring>& roots) {
-  std::vector<GameEntry> games;
-  std::unordered_set<std::wstring> seen_paths;
   std::error_code ec;
   for (const auto& root : roots) {
     if (root.empty()) {
@@ -108,6 +112,13 @@ std::vector<GameEntry> Scanner::ScanAll(const std::vector<std::wstring>& roots) 
     }
     ec.clear();
     const std::wstring source = GuessSource(root);
+    std::vector<SteamInstallInfo> steam_installs;
+    if (source == L"steam") {
+      std::filesystem::path steamapps_dir = ResolveSteamAppsDir(root_path);
+      if (!steamapps_dir.empty()) {
+        steam_installs = LoadSteamManifests(steamapps_dir);
+      }
+    }
     std::filesystem::recursive_directory_iterator it(
         root_path, std::filesystem::directory_options::skip_permission_denied, ec);
     if (ec) {
@@ -136,6 +147,10 @@ std::vector<GameEntry> Scanner::ScanAll(const std::vector<std::wstring>& roots) 
       }
 
       const std::filesystem::path& file_path = entry.path();
+      if (ShouldSkipPath(file_path.parent_path())) {
+        it.increment(ec);
+        continue;
+      }
       std::wstring extension = ToLower(file_path.extension().wstring());
       if (extension != L".exe") {
         it.increment(ec);
@@ -166,7 +181,47 @@ std::vector<GameEntry> Scanner::ScanAll(const std::vector<std::wstring>& roots) 
       game.folder = absolute.parent_path().wstring();
       game.name = DisplayNameFromStem(file_path.stem().wstring());
       game.source = source;
+
+      std::wstring install_prefix_key;
+      int install_score = 0;
+      const SteamInstallInfo* matched_install = nullptr;
+      if (!steam_installs.empty()) {
+        matched_install = MatchSteamInstall(steam_installs, absolute);
+        if (matched_install && !matched_install->normalized_prefix.empty()) {
+          install_prefix_key = matched_install->normalized_prefix;
+          install_score = ScoreExecutableForInstall(absolute, *matched_install);
+          auto existing = steam_install_index.find(install_prefix_key);
+          if (existing != steam_install_index.end()) {
+            int previous_score = steam_install_scores[install_prefix_key];
+            if (install_score > previous_score) {
+              GameEntry& existing_game = games[existing->second];
+              existing_game.exe = absolute.wstring();
+              existing_game.folder = matched_install->folder;
+              if (!matched_install->name.empty()) {
+                existing_game.name = matched_install->name;
+              }
+              existing_game.steamAppId = matched_install->app_id;
+              steam_install_scores[install_prefix_key] = install_score;
+            }
+            it.increment(ec);
+            continue;
+          }
+        }
+      }
+
+      if (matched_install) {
+        game.folder = matched_install->folder;
+        if (!matched_install->name.empty()) {
+          game.name = matched_install->name;
+        }
+        game.steamAppId = matched_install->app_id;
+      }
+
       games.emplace_back(std::move(game));
+      if (!install_prefix_key.empty()) {
+        steam_install_index[install_prefix_key] = games.size() - 1;
+        steam_install_scores[install_prefix_key] = install_score;
+      }
       it.increment(ec);
     }
   }
@@ -193,12 +248,12 @@ std::vector<std::wstring> Scanner::DefaultFolders() {
   const std::wstring program_data = GetEnvVar(L"ProgramData");
 
   if (!program_files_x86.empty()) {
-    AppendIfExists(roots, program_files_x86 + L"\\Steam\\steamapps\\common");
+    AddSteamLibrariesFrom(roots, std::filesystem::path(program_files_x86) / "Steam");
   }
   if (!program_files.empty()) {
-    AppendIfExists(roots, program_files + L"\\Steam\\steamapps\\common");
-    AppendIfExists(roots, program_files + L"\\Epic Games");
-    AppendIfExists(roots, program_files + L"\\ModifiableWindowsApps");
+    AddSteamLibrariesFrom(roots, std::filesystem::path(program_files) / "Steam");
+    AppendIfExists(roots, (std::filesystem::path(program_files) / "Epic Games").wstring());
+    AppendIfExists(roots, (std::filesystem::path(program_files) / "ModifiableWindowsApps").wstring());
   }
   if (!program_data.empty()) {
     AppendIfExists(roots, program_data + L"\\Microsoft\\Windows\\Start Menu\\Programs");

@@ -17,7 +17,6 @@
 #pragma comment(lib, "comctl32.lib")
 
 namespace optiscaler {
-namespace {
 
 constexpr wchar_t kWindowClass[] = L"OptiScalerMgrLiteWindow";
 
@@ -135,16 +134,18 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam) {
   return 0;
 }
 
+}  // namespace optiscaler
+
 int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE, _In_ LPWSTR, _In_ int cmd_show) {
   WNDCLASSEXW wc = {};
   wc.cbSize = sizeof(wc);
   wc.style = CS_HREDRAW | CS_VREDRAW;
-  wc.lpfnWndProc = WndProc;
+  wc.lpfnWndProc = optiscaler::WndProc;
   wc.hInstance = instance;
   wc.hCursor = LoadCursor(nullptr, IDC_ARROW);
   wc.hIcon = LoadIcon(nullptr, IDI_APPLICATION);
   wc.hbrBackground = reinterpret_cast<HBRUSH>(COLOR_WINDOW + 1);
-  wc.lpszClassName = kWindowClass;
+  wc.lpszClassName = optiscaler::kWindowClass;
 
   if (!RegisterClassExW(&wc)) {
     return 0;
@@ -155,8 +156,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE, _In_ LPWSTR, 
     menu = CreateMenu();
   }
 
-  AppState state;
-  HWND hwnd = CreateWindowExW(0, kWindowClass, L"OptiScaler Manager Lite", WS_OVERLAPPEDWINDOW,
+  optiscaler::AppState state;
+  HWND hwnd = CreateWindowExW(0, optiscaler::kWindowClass, L"OptiScaler Manager Lite", WS_OVERLAPPEDWINDOW,
                               CW_USEDEFAULT, CW_USEDEFAULT, 1280, 720, nullptr, menu, instance, &state);
   if (!hwnd) {
     return 0;
@@ -171,6 +172,3 @@ int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE, _In_ LPWSTR, 
   }
   return static_cast<int>(msg.wParam);
 }
-
-}  // namespace
-}  // namespace optiscaler
