@@ -19,6 +19,14 @@ void OptiScalerManager::SetAutoUpdateEnabled(bool enabled) {
   auto_update_enabled_ = enabled;
 }
 
+void OptiScalerManager::SetFallbackPackageDirectory(const std::wstring& path) {
+  fallback_dir_ = path;
+}
+
+std::wstring OptiScalerManager::FallbackPackageDirectory() const {
+  return fallback_dir_;
+}
+
 bool OptiScalerManager::ApplyInjection(const GameEntry& /*game*/, std::wstring& error_out) {
   error_out = L"Injection pipeline not yet implemented.";
   return false;
