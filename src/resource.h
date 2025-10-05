@@ -1,0 +1,10 @@
+#pragma once
+
+#define IDC_MAINMENU 1001
+
+#define IDM_FILE_RESCAN 2001
+#define IDM_FILE_EXIT 2002
+#define IDM_TOOLS_SETTINGS 2003
+#define IDM_HELP_LOGS 2004
+
+#define IDC_STATUS_BAR 3001
