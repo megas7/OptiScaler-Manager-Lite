@@ -1,6 +1,7 @@
 #include <windows.h>
 #include <commctrl.h>
 
+#include <algorithm>
 #include <memory>
 #include <string>
 #include <vector>
@@ -12,12 +13,12 @@
 #include "renderer_factory.h"
 #include "resource.h"
 #include "scanner.h"
+#include "settings.h"
 #include "systeminfo.h"
 
 #pragma comment(lib, "comctl32.lib")
 
 namespace optiscaler {
-namespace {
 
 constexpr wchar_t kWindowClass[] = L"OptiScalerMgrLiteWindow";
 
@@ -26,11 +27,15 @@ struct AppState {
   size_t selected_index = 0;
   std::unique_ptr<IRenderer> renderer;
   HWND status_bar = nullptr;
+  SettingsData settings;
 };
 
-RendererPreference ParseRendererPreference() {
-  // TODO: Load renderer preference from persisted settings.
-  return RendererPreference::kGDI;
+std::vector<std::wstring> BuildScanRoots(const AppState& state) {
+  std::vector<std::wstring> roots = Scanner::DefaultFolders();
+  roots.insert(roots.end(), state.settings.customScanFolders.begin(), state.settings.customScanFolders.end());
+  std::sort(roots.begin(), roots.end());
+  roots.erase(std::unique(roots.begin(), roots.end()), roots.end());
+  return roots;
 }
 
 void UpdateStatusBar(AppState* state, const std::wstring& text) {
@@ -75,9 +80,10 @@ void OnCommand(HWND hwnd, AppState* state, WPARAM wparam) {
       PostMessageW(hwnd, WM_CLOSE, 0, 0);
       break;
     case IDM_FILE_RESCAN: {
-      auto defaults = Scanner::DefaultFolders();
-      state->games = Scanner::ScanAll(defaults);
-      UpdateStatusBar(state, L"Rescan completed (placeholder).");
+      auto roots = BuildScanRoots(*state);
+      state->games = Scanner::ScanAll(roots);
+      std::wstring status = L"Rescan completed. Games found: " + std::to_wstring(state->games.size());
+      UpdateStatusBar(state, status);
       InvalidateRect(hwnd, nullptr, TRUE);
       break;
     }
@@ -109,7 +115,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam) {
       InitCommonControlsEx(&icc);
 
       state->status_bar = CreateStatusWindowW(WS_CHILD | WS_VISIBLE, L"Ready", hwnd, IDC_STATUS_BAR);
-      state->renderer = CreateRenderer(ParseRendererPreference(), hwnd);
+      state->renderer = CreateRenderer(state->settings.rendererPreference, hwnd);
       if (!state->renderer) {
         MessageBoxW(hwnd, L"Failed to initialize renderer.", L"OptiScaler Manager Lite", MB_ICONERROR);
         return -1;
@@ -135,16 +141,18 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam) {
   return 0;
 }
 
+}  // namespace optiscaler
+
 int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE, _In_ LPWSTR, _In_ int cmd_show) {
   WNDCLASSEXW wc = {};
   wc.cbSize = sizeof(wc);
   wc.style = CS_HREDRAW | CS_VREDRAW;
-  wc.lpfnWndProc = WndProc;
+  wc.lpfnWndProc = optiscaler::WndProc;
   wc.hInstance = instance;
   wc.hCursor = LoadCursor(nullptr, IDC_ARROW);
   wc.hIcon = LoadIcon(nullptr, IDI_APPLICATION);
   wc.hbrBackground = reinterpret_cast<HBRUSH>(COLOR_WINDOW + 1);
-  wc.lpszClassName = kWindowClass;
+  wc.lpszClassName = optiscaler::kWindowClass;
 
   if (!RegisterClassExW(&wc)) {
     return 0;
@@ -155,8 +163,11 @@ int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE, _In_ LPWSTR, 
     menu = CreateMenu();
   }
 
-  AppState state;
-  HWND hwnd = CreateWindowExW(0, kWindowClass, L"OptiScaler Manager Lite", WS_OVERLAPPEDWINDOW,
+  optiscaler::AppState state;
+  if (!optiscaler::Settings::Load(state.settings)) {
+    MessageBoxW(nullptr, L"Failed to initialize settings.", L"OptiScaler Manager Lite", MB_ICONWARNING);
+  }
+  HWND hwnd = CreateWindowExW(0, optiscaler::kWindowClass, L"OptiScaler Manager Lite", WS_OVERLAPPEDWINDOW,
                               CW_USEDEFAULT, CW_USEDEFAULT, 1280, 720, nullptr, menu, instance, &state);
   if (!hwnd) {
     return 0;
@@ -171,6 +182,3 @@ int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE, _In_ LPWSTR, 
   }
   return static_cast<int>(msg.wParam);
 }
-
-}  // namespace
-}  // namespace optiscaler

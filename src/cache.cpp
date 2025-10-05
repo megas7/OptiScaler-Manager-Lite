@@ -38,6 +38,7 @@ std::wstring Cache::AppDataRoot() {
     std::wstring result(path);
     CoTaskMemFree(path);
     result += L"\\OptiScalerMgrLite";
+    EnsureDirectory(result);
     return result;
   }
   return L"";
