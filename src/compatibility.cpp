@@ -15,7 +15,7 @@
 
 #include "cache.h"
 
-#include "third_party/json.hpp"
+#include <json.hpp>
 
 #pragma comment(lib, "winhttp.lib")
 
