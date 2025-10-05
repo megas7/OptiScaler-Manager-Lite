@@ -11,6 +11,8 @@ BEGIN
     POPUP "&Tools"
     BEGIN
         MENUITEM "&Settings...", IDM_TOOLS_SETTINGS
+        MENUITEM "Toggle &Global Injection", IDM_TOOLS_TOGGLE_GLOBAL
+        MENUITEM "Select &OptiScaler Folder...", IDM_TOOLS_SELECT_OPTISCALER
     END
     POPUP "&Help"
     BEGIN

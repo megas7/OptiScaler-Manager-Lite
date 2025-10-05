@@ -11,6 +11,7 @@ struct SystemInfoData {
   uint32_t cpuCores = 0;
   uint32_t cpuThreads = 0;
   uint64_t ramMB = 0;
+  std::wstring osVersion;
 };
 
 SystemInfoData GetSystemInfo();
