@@ -72,6 +72,19 @@ void RendererGDI::DrawText(const std::wstring& text, int x, int y, COLORREF colo
   TextOutW(back_dc_, x, y, text.c_str(), static_cast<int>(text.length()));
 }
 
+void RendererGDI::DrawFrame(int x, int y, int width, int height, COLORREF color, int thickness) {
+  if (!back_dc_) {
+    return;
+  }
+  HPEN pen = CreatePen(PS_SOLID, thickness, color);
+  HGDIOBJ old_pen = SelectObject(back_dc_, pen);
+  HGDIOBJ old_brush = SelectObject(back_dc_, GetStockObject(HOLLOW_BRUSH));
+  Rectangle(back_dc_, x, y, x + width, y + height);
+  SelectObject(back_dc_, old_brush);
+  SelectObject(back_dc_, old_pen);
+  DeleteObject(pen);
+}
+
 void RendererGDI::End() {
   if (!back_dc_) {
     return;

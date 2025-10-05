@@ -14,6 +14,7 @@ class IRenderer {
   virtual void Begin() = 0;
   virtual void DrawBitmap(HBITMAP bitmap, int x, int y, int width, int height) = 0;
   virtual void DrawText(const std::wstring& text, int x, int y, COLORREF color) = 0;
+  virtual void DrawFrame(int x, int y, int width, int height, COLORREF color, int thickness) = 0;
   virtual void End() = 0;
 };
 

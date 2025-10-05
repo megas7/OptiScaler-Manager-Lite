@@ -14,6 +14,7 @@ class RendererGDI : public IRenderer {
   void Begin() override;
   void DrawBitmap(HBITMAP bitmap, int x, int y, int width, int height) override;
   void DrawText(const std::wstring& text, int x, int y, COLORREF color) override;
+  void DrawFrame(int x, int y, int width, int height, COLORREF color, int thickness) override;
   void End() override;
 
  private:
