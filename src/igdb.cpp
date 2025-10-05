@@ -40,6 +40,9 @@ using json = nlohmann::json;
 #ifndef WINHTTP_DECOMPRESSION_FLAG_DEFLATE
 #define WINHTTP_DECOMPRESSION_FLAG_DEFLATE 0x00000002
 #endif
+#ifndef HTTP_STATUS_UNAUTHORIZED
+#define HTTP_STATUS_UNAUTHORIZED 401
+#endif
 
 std::string Utf8FromWide(const std::wstring& wide) {
   if (wide.empty()) {
