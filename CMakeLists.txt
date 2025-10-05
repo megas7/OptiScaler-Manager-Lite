@@ -14,7 +14,8 @@ target_include_directories(
   PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src
     ${CMAKE_CURRENT_SOURCE_DIR}/third_party
-    ${CMAKE_CURRENT_SOURCE_DIR}/third_party/nlohmann)
+    ${CMAKE_CURRENT_SOURCE_DIR}/third_party/nlohmann
+)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
   comctl32 Windowscodecs Shell32 Shlwapi Winhttp Version Ole32 uuid d3d12 d3d11 dxgi d2d1 dwrite)
