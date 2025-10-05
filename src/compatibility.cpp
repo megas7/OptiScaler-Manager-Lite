@@ -13,6 +13,7 @@
 #include <string>
 #include <thread>
 #include <unordered_map>
+#include <utility>
 
 #include "cache.h"
 
@@ -137,6 +138,40 @@ std::wstring HeaderValue(HINTERNET request, DWORD infoLevel) {
   return value;
 }
 
+class ScopedHInternet {
+ public:
+  ScopedHInternet() = default;
+  explicit ScopedHInternet(HINTERNET handle) : handle_(handle) {}
+  ScopedHInternet(const ScopedHInternet&) = delete;
+  ScopedHInternet& operator=(const ScopedHInternet&) = delete;
+  ScopedHInternet(ScopedHInternet&& other) noexcept : handle_(other.release()) {}
+  ScopedHInternet& operator=(ScopedHInternet&& other) noexcept {
+    if (this != &other) {
+      reset(other.release());
+    }
+    return *this;
+  }
+  ~ScopedHInternet() { reset(); }
+
+  void reset(HINTERNET handle = nullptr) {
+    if (handle_) {
+      WinHttpCloseHandle(handle_);
+    }
+    handle_ = handle;
+  }
+
+  [[nodiscard]] HINTERNET get() const { return handle_; }
+  explicit operator bool() const { return handle_ != nullptr; }
+  HINTERNET release() {
+    HINTERNET temp = handle_;
+    handle_ = nullptr;
+    return temp;
+  }
+
+ private:
+  HINTERNET handle_ = nullptr;
+};
+
 bool PerformHttpGet(const std::wstring& url, const std::wstring& etag, const std::wstring& lastModified,
                     HttpResponse& response) {
   URL_COMPONENTSW comps = {};
@@ -147,74 +182,68 @@ bool PerformHttpGet(const std::wstring& url, const std::wstring& etag, const std
   }
   std::wstring host(comps.lpszHostName, comps.dwHostNameLength);
   std::wstring path(comps.lpszUrlPath, comps.dwUrlPathLength);
+  if (comps.dwExtraInfoLength > 0 && comps.lpszExtraInfo) {
+    path.append(comps.lpszExtraInfo, comps.dwExtraInfoLength);
+  }
   std::wstring scheme(comps.lpszScheme, comps.dwSchemeLength);
   bool secure = (scheme == L"https");
 
-  HINTERNET session = WinHttpOpen(L"OptiScalerMgrLite/1.0", WINHTTP_ACCESS_TYPE_DEFAULT_PROXY, WINHTTP_NO_PROXY_NAME,
-                                  WINHTTP_NO_PROXY_BYPASS, 0);
+  ScopedHInternet session(WinHttpOpen(L"OptiScalerMgrLite/1.0", WINHTTP_ACCESS_TYPE_DEFAULT_PROXY, WINHTTP_NO_PROXY_NAME,
+                                      WINHTTP_NO_PROXY_BYPASS, 0));
   if (!session) {
     return false;
   }
-  WinHttpSetTimeouts(session, 5000, 5000, 15000, 30000);
+  WinHttpSetTimeouts(session.get(), 5000, 5000, 15000, 30000);
 
-  HINTERNET connection = WinHttpConnect(session, host.c_str(), comps.nPort, 0);
+  ScopedHInternet connection(WinHttpConnect(session.get(), host.c_str(), comps.nPort, 0));
   if (!connection) {
-    WinHttpCloseHandle(session);
     return false;
   }
 
-  HINTERNET request = WinHttpOpenRequest(connection, L"GET", path.c_str(), nullptr, WINHTTP_NO_REFERER,
-                                         WINHTTP_DEFAULT_ACCEPT_TYPES, secure ? WINHTTP_FLAG_SECURE : 0);
+  ScopedHInternet request(WinHttpOpenRequest(connection.get(), L"GET", path.c_str(), nullptr, WINHTTP_NO_REFERER,
+                                             WINHTTP_DEFAULT_ACCEPT_TYPES, secure ? WINHTTP_FLAG_SECURE : 0));
   if (!request) {
-    WinHttpCloseHandle(connection);
-    WinHttpCloseHandle(session);
     return false;
   }
 
+  constexpr DWORD kHeaderFlags = WINHTTP_ADDREQ_FLAG_ADD | WINHTTP_ADDREQ_FLAG_REPLACE;
   if (!etag.empty()) {
     std::wstring header = L"If-None-Match: " + etag;
-    WinHttpAddRequestHeaders(request, header.c_str(), static_cast<DWORD>(header.size()), WINHTTP_ADDREQ_FLAG_ADD);
+    WinHttpAddRequestHeaders(request.get(), header.c_str(), static_cast<DWORD>(header.size()), kHeaderFlags);
   }
   if (!lastModified.empty()) {
     std::wstring header = L"If-Modified-Since: " + lastModified;
-    WinHttpAddRequestHeaders(request, header.c_str(), static_cast<DWORD>(header.size()), WINHTTP_ADDREQ_FLAG_ADD);
+    WinHttpAddRequestHeaders(request.get(), header.c_str(), static_cast<DWORD>(header.size()), kHeaderFlags);
   }
 
-  bool ok = WinHttpSendRequest(request, WINHTTP_NO_ADDITIONAL_HEADERS, 0, WINHTTP_NO_REQUEST_DATA, 0, 0, 0);
+  response.body.clear();
+
+  bool ok = WinHttpSendRequest(request.get(), WINHTTP_NO_ADDITIONAL_HEADERS, 0, WINHTTP_NO_REQUEST_DATA, 0, 0, 0);
   if (ok) {
-    ok = WinHttpReceiveResponse(request, nullptr);
+    ok = WinHttpReceiveResponse(request.get(), nullptr);
   }
   if (!ok) {
-    WinHttpCloseHandle(request);
-    WinHttpCloseHandle(connection);
-    WinHttpCloseHandle(session);
     return false;
   }
 
   DWORD statusCode = 0;
   DWORD statusSize = sizeof(statusCode);
-  if (!WinHttpQueryHeaders(request, WINHTTP_QUERY_STATUS_CODE | WINHTTP_QUERY_FLAG_NUMBER, nullptr, &statusCode, &statusSize,
-                           WINHTTP_NO_HEADER_INDEX)) {
-    WinHttpCloseHandle(request);
-    WinHttpCloseHandle(connection);
-    WinHttpCloseHandle(session);
+  if (!WinHttpQueryHeaders(request.get(), WINHTTP_QUERY_STATUS_CODE | WINHTTP_QUERY_FLAG_NUMBER, nullptr, &statusCode,
+                           &statusSize, WINHTTP_NO_HEADER_INDEX)) {
     return false;
   }
   response.status = statusCode;
-  response.etag = HeaderValue(request, WINHTTP_QUERY_ETAG);
-  response.lastModified = HeaderValue(request, WINHTTP_QUERY_LAST_MODIFIED);
+  response.etag = HeaderValue(request.get(), WINHTTP_QUERY_ETAG);
+  response.lastModified = HeaderValue(request.get(), WINHTTP_QUERY_LAST_MODIFIED);
 
   if (statusCode == HTTP_STATUS_NOT_MODIFIED) {
-    WinHttpCloseHandle(request);
-    WinHttpCloseHandle(connection);
-    WinHttpCloseHandle(session);
     return true;
   }
 
   std::string body;
   DWORD available = 0;
   do {
-    if (!WinHttpQueryDataAvailable(request, &available)) {
+    if (!WinHttpQueryDataAvailable(request.get(), &available)) {
       break;
     }
     if (available == 0) {
@@ -222,7 +251,7 @@ bool PerformHttpGet(const std::wstring& url, const std::wstring& etag, const std
     }
     std::string chunk(available, '\0');
     DWORD read = 0;
-    if (!WinHttpReadData(request, chunk.data(), available, &read)) {
+    if (!WinHttpReadData(request.get(), chunk.data(), available, &read)) {
       break;
     }
     chunk.resize(read);
@@ -230,10 +259,6 @@ bool PerformHttpGet(const std::wstring& url, const std::wstring& etag, const std
   } while (available > 0);
 
   response.body = std::move(body);
-
-  WinHttpCloseHandle(request);
-  WinHttpCloseHandle(connection);
-  WinHttpCloseHandle(session);
   return true;
 }
 
