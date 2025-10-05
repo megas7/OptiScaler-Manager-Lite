@@ -2,6 +2,7 @@
 
 #include <filesystem>
 #include <cwctype>
+#include <cstdint>
 
 #include <wincodec.h>
 
@@ -10,8 +11,8 @@
 namespace optiscaler {
 
 namespace {
-constexpr int kHashOffset = 1469598103934665603ull;
-constexpr int kHashPrime = 1099511628211ull;
+constexpr uint64_t kHashOffset = 1469598103934665603ull;
+constexpr uint64_t kHashPrime = 1099511628211ull;
 
 uint64_t HashPath(const std::wstring& path) {
   uint64_t hash = kHashOffset;
