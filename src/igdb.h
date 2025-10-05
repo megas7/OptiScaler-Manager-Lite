@@ -2,12 +2,18 @@
 
 #include <optional>
 #include <string>
+#include <vector>
 
 namespace optiscaler {
 
 struct IgdbGame {
   std::wstring name;
-  std::wstring imageId;
+  std::wstring summary;
+  std::vector<std::wstring> genres;
+  std::vector<std::wstring> platforms;
+  std::wstring coverImageId;
+  std::wstring releaseDate;
+  double rating = 0.0;
 };
 
 class IGDB {
