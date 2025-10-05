@@ -1,0 +1,33 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.9.0-pre4
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Windows 11 24H2
+
+|**GPU**
+|AMD
+
+|**Inputs**
+|FSR3 (unsupported), DLSS (DLAA)
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|Unavailable, DX11 game
+
+|**Known Issues**
+a|* FSR3 inputs can't be hooked.
+* Forcing DX12 (`-force-d3d12`) doesn't work.
+
+|**Notes**
+a|* Select DLAA in game settings and use "upscale ratio override" within OptiScaler to adjust input resolution.
+
+|**Reported By**
+|san9
+|=== 

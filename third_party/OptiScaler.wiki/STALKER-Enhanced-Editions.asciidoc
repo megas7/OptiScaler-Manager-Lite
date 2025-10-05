@@ -1,0 +1,35 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.7.7-pre12
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|RX 6950XT
+
+|**Inputs**
+|FSR3.1
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+a|
+* Opti Overlay can't hook display inputs and it doesn't show up when invoked - https://github.com/optiscaler/OptiScaler/issues/589#issuecomment-3067040683[issue link]
+* **Workaround** - combine with **SpecialK** - had best results with Option 1 SK GUI - https://github.com/optiscaler/OptiScaler/wiki/Compatibility-with-other-mods-(Reshade,-SpecialK)#specialk[link]
+* Mouse inputs do not work in the overlay - requires using keyboard navigation - arrow keys, tab and space
+
+|**Notes**
+|-
+
+|**Reported By**
+|By-U, TheRazerMD
+|=== 

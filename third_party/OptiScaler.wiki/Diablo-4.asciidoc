@@ -1,0 +1,35 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.7.8
+
+|**Filename**
+|`dxgi.dll`, `winmm.dll`
+
+|**OS**
+|-
+
+|**GPU**
+|-
+
+|**Inputs**
+|DLSS, DLSS-FG, XeSS, FSR 2.1
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+a|
+* **Game has anticheat, so testing on your own responsibility!**
+
+|**Notes**
+a|
+* If `dxgi.dll` isn't working, try using OptiScaler as `winmm.dll`
+* Nukems mod worked last time it was tested
+
+|**Reported By**
+|-
+|=== 

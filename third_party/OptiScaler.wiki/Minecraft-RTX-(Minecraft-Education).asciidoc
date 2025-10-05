@@ -1,0 +1,36 @@
+[cols="1,1"]
+|===
+|**Version**
+|`0.7-pre66`
+
+|**Filename**
+|`winmm.dll`
+
+|**OS**
+|GNU/Linux, Windows 11 23H2
+
+|**GPU**
+|NVIDIA GeForce RTX 3060
+
+|**Inputs**
+|DLSS
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+|Frame Generation works, though `HUDFix` cannot detect the UI properly and `FG Allow Async` makes the game unplayable.    
+Upscaling Quality Overrides, Anisotropic Filtering and DirectX Mipmap Bias cannot be changed whilst in the game and can only be modified through `nvngx.ini`.    
+DLSS Render Presets do not work whatsoever. DLSSTweaks is recommended as an alternative.    
+Certain render resolutions on presets may cause "black bars".    
+
+|**Notes**
+|When using Frame Generation, be sure to assign window resolution before the game launches as any post-launch changes to window aspects causes warping.    
+`imgui` causes crashing in non-Preview builds of Minecraft Education. This is possibly caused by Themida. Preview builds are recommended if you want to access OptiScaler's Overlay.
+
+|**Reported By**
+|Weather (weathera)
+|=== 

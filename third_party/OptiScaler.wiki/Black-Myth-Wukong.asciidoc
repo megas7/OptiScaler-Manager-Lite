@@ -1,0 +1,39 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.9.0-pre2
+
+|**Filename**
+|`dxgi.dll`, `winmm.dll`
+
+|**OS**
+|Windows 11
+
+|**GPU**
+|Radeon RX 9070 XT
+
+|**Inputs**
+|DLSS (w/ https://github.com/optiscaler/OptiPatcher[OptiPatcher]), FSR3.0, XeSS
+
+|**Settings**
+|`Dxgi=false`
+
+|**FG-Settings**
+a|
+* Use https://github.com/optiscaler/OptiPatcher[OptiPatcher], then either:
+* nukems
+* DLSSG input -> XeFG output
+
+|**Known Issues**
+a|
+* Spoofing causes blue texture corruptions on AMD/Intel - hence `Dxgi=false`. For DLSS(G) inputs use https://github.com/optiscaler/OptiPatcher[OptiPatcher].
+* Native coupled FSR 3.0 FG doesn't play well with OptiScaler when replacing the upscaler (not smooth, drunken feeling).
+* In-Game resolution scale resets after launch, i.e., 100% -> 100%, 75% -> 66% (goes to the closest hardcoded preset), ratio override doesn't work. Applying the scale setting once again fixes it until the next launch. Stick to normal ratios otherwise (100%, 66%, 50% etc.)
+* XeSS input only works for XeSS output or FSR4 output.
+
+|**Notes**
+a|
+
+|**Reported By**
+|san9
+|=== 

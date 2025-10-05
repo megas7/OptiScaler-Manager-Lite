@@ -1,0 +1,32 @@
+[cols="1,1"]
+|===
+|**Version**
+|Optiscaler 0.7.0-pre86
+
+|**Filename**
+|-
+
+|**OS**
+|Windows 11 24H2
+
+|**GPU**
+|AMD Radeon 6950XT
+
+|**Inputs**
+|FSR2
+
+|**Settings**
+|`UseFGSwapChain=false`, `DisableOverlays=false`, `Dxgi=false`
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+|Requires an upscaling ratio of atleast 1.01, 1.0 disables upscaling
+
+|**Notes**
+|Seems to work properly regarding FSR2 inputs, OptiFG not tested
+
+|**Reported By**
+|TheRazerMD
+|=== 

@@ -1,0 +1,67 @@
+[cols="1,1"]
+|===
+|**Version**
+|v0.6.8-pre4, 0.7.7-pre7
+
+|**Filename**
+|`winmm.dll`, `winhttp.dll`
+
+|**OS**
+|Windows
+
+|**GPU**
+|Nvidia, AMD
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+a|
+* OptiScaler needs to be injected as `winmm.dll` or `winhttp.dll`, it crashes as anything else
+* Changes to the resolution scale require a game restart to apply.
+* AMD/Intel users need `Fakenvapi` to expose DLSS in-game
+* For Linux issues - check https://github.com/optiscaler/OptiScaler/issues/629#issuecomment-3144270156[here]
+
+|**Notes**
+|Game forces 1.0 scaling with DLSS, use **Ratio Override** and enable **both DRS overrides** (Dynamic Res Scaling) as on the https://github.com/user-attachments/assets/0d4370d3-0481-4938-94e6-26b17e4380f5[screenshot] for custom scaling (requires re-enabling DLSS or restarting the game to apply)
+
+|**Reported By**
+|Maple
+|=== 
+
+---
+
+[cols="1,1"]
+|===
+|**Version**
+|v0.6.8-pre4
+
+|**Filename**
+|`winmm.dll`
+
+|**OS**
+|Linux/Steam Deck
+
+|**GPU**
+|AMD
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+a|
+* OptiScaler needs to be injected as `winmm.dll`, it crashes as anything else
+* Changes to the resolution scale require a game restart to apply.
+
+|**Notes**
+|-
+
+|**Reported By**
+|Maple
+|=== 

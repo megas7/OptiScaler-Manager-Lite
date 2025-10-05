@@ -1,0 +1,41 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.7.7-pre7
+
+|**Filename**
+|`version.dll`
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|RX 6950XT
+
+|**Inputs**
+|XeSS with REFramework
+
+|**Settings**
+|`Dxgi=false`, requires **REFramework** and **PDUpscaler** plugin
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+|HUD is also upscaled
+
+|**Notes**
+a|
+* Download **REFramework** https://github.com/praydog/REFramework/actions?query=branch%3Apd-upscaler++[pd-upscaler branch] (find the appropriate game file under Artifacts)  
+* Download https://www.nexusmods.com/site/mods/502?tab=files&file_id=2293[PDUpscaler] plugin **1.1.2**
+* Extract REFramework files to the game folder
+* Create a `plugins` folder **inside reframework folder** 
+* Transfer **PDPerfPlugin.dll** and all of the **Optiscaler** files to `reframework/plugins` folder
+* Rename OptiScaler.dll to `version.dll`
+* Boot the game, press `Insert` to open REFramework overlay (if it isn't already), change shortcut in `Configuration-Menu key` to e.g. End or Home as Optiscaler uses Insert already
+* Optiscaler overlay only works when TemporalUpscaler is disabled - change settings in Opti when disabled then enable it to apply 
+* https://github.com/user-attachments/assets/c6233f43-1043-4402-8f25-f3dde608e956[Folder structure] example, In-game screenshots https://github.com/user-attachments/assets/854a40e2-7701-45e4-8057-59a210f50502[1], https://github.com/user-attachments/assets/1644cb13-2a3d-4c13-beeb-21c1f6090ecf[2]
+
+|**Reported By**
+|Amu, TheRazerMD
+|=== 

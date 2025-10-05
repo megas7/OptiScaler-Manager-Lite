@@ -1,0 +1,32 @@
+[cols="1,1"]
+|===
+|**Version**
+|-
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|RX 6950XT
+
+|**Inputs**
+|DLSS, FSR3 (not tested), XeSS
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+|To disable ghosting with FG, requires _disabling Vignette and Lens Distortion_ in game config `engine.ini` (check **PCGW** for more info)
+
+|**Notes**
+|XeSS UE plugin won't provide depth, not recommended to use
+
+|**Reported By**
+|TheRazerMD
+|=== 

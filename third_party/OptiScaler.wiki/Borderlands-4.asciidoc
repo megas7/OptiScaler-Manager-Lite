@@ -1,0 +1,38 @@
+[cols="1,1"]
+|===
+|**Version**
+|Optiscaler v0.7.9
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|RX 9070 XT
+
+|**Inputs**
+|DLSS
+
+|**Settings**
+a|
+* DLSS input -> FSR4 output
+* AntiLag 2 via Fakenvapi
+
+|**FG-Settings**
+a|
+* nukems
+* DLSSG input -> FSR-FG output
+
+|**Known Issues**
+a|
+* Nukem's FG will cause intense flickering if Non-Linear sRGB Input is enabled after FG begins
+* Fix broken visuals on Nukem's causes a crash to desktop
+
+|**Notes**
+|Performance of FSR-FG using FSR4 and AntiLag2 using DLSS inputs is significantly less latent than the vanilla implementation.
+
+|**Reported By**
+|IceAmaura
+|=== 

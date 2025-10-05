@@ -1,0 +1,32 @@
+[cols="1,1"]
+|===
+|**Version**
+|Optiscaler 0.7.7-pre7 & nightly
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Windows 10
+
+|**GPU**
+|AMD Vega 8
+
+|**Inputs**
+|DLSS + DLSS FG, FSR3 (check Known Issues) 
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|`FGType=Nukems` with Nukem's `dlssg-to-fsr3` v0.122
+
+|**Known Issues**
+|In order to fix FSR2 inputs crashing add `r.FidelityFX.FSR2.UseNativeDX12=1` to game's `Engine.ini` config file (check https://github.com/optiscaler/OptiScaler/wiki/Unreal-Engine-Tweaks[Unreal Engine wiki entry], and PCGW for config files' location)
+
+|**Notes**
+|-
+
+|**Reported By**
+|nitec
+|=== 

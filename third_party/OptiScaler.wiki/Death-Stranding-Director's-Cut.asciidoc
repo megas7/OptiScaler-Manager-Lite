@@ -1,0 +1,33 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.7.8
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Windows 11
+
+|**GPU**
+|AMD RX 9070 XT
+
+|**Inputs**
+|DLSS, XeSS, FSR2 (not working)
+
+|**Settings**
+|For FSR4 output, try `Non-Linear PQ Input` - may improve image quality.
+
+|**FG-Settings**
+|Opti FG on / HUDFix 2 / Immediate Capture On / Async On
+
+|**Known Issues**
+a|
+* FSR2 inputs crash, set `EnableFsr2Inputs=false` in OptiScaler.ini
+
+|**Notes**
+|-
+
+|**Reported By**
+|onehoon (FG), san9 (rest)
+|=== 

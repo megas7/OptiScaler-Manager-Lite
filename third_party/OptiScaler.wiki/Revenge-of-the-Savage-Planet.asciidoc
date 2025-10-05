@@ -1,0 +1,33 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.7.7-pre12
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|-
+
+|**GPU**
+|-
+
+|**Inputs**
+|DLSS, XeSS, FSR3.1 (check below)
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+a|
+* FSR 3.1 inputs require https://github.com/optiscaler/OptiScaler/wiki/Unreal-Engine-Tweaks#when-using-fsr31-inputs-game-is-crashing[this 3.1 inputs crashing fix], otherwise crash on switch - or just disable them with `EnableFfxInputs=false`, or on older Opti, `Ffx=false` in **Optiscaler.ini**  
+
+|**Notes**
+|-
+
+|**Reported By**
+|nas360
+|=== 

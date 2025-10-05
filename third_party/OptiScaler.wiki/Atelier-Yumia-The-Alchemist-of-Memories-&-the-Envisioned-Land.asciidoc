@@ -1,0 +1,32 @@
+[cols="1,1"]
+|===
+|**Version**
+|OptiScaler v0.7.7-pre7 (20250316_041652)
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Windows 11 24H2
+
+|**GPU**
+|NVIDIA RTX 3070
+
+|**Inputs**
+|XeSS
+
+|**Settings**
+|Set `AutoExposure=true` in OptiScaler.ini to fix rendering issues with DLSS
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+|-
+
+|**Notes**
+|Game only has XeSS inputs, DLSS works if you copy `nvngx_dlss.dll` to the game's folder. 
+
+|**Reported By**
+|Maple
+|=== 

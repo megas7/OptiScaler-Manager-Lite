@@ -1,0 +1,36 @@
+[cols="1,1"]
+|===
+|**Version**
+|- 0.7.8
+
+|**Filename**
+|- version.dll
+
+|**OS**
+|- Win10
+
+|**GPU**
+|- Radeon RX 9070XT
+
+|**Inputs**
+|- DLSS
+
+|**Settings**
+|- Disable EAC. 
+for Vulkan:
+ `Vulkan = true`
+ `VulkanExtensionSpoofing = true `
+ 
+
+|**FG-Settings**
+|-n/a
+
+|**Known Issues**
+|-EAC Game. Does not work with FSR3 inputs
+
+|**Notes**
+|- by default a DX11 game, but you can enable Vulkan for better perf. Requires DX11on12 options for XeSS & FSR4 on DX11. FSR4 not yet available for Vulkan.
+
+|**Reported By**
+|- TotallySkr3wd
+|=== 

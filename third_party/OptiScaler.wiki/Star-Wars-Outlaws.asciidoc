@@ -1,0 +1,35 @@
+[cols="1,1"]
+|===
+|**Version**
+|OptiScaler_v0.7.7-pre9
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|RX 6950XT
+
+|**Inputs**
+|DLSS, XeSS, FSR3.1
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+a|
+* Spoofing seems to break interior shadows - recommended to disable spoofing with `Dxgi=false` and use FSR or XeSS inputs
+* Full game was updated to FSR 3.1, so the below fix should no longer be needed - demo is still FSR 3.0 tho  
+* OLD - +++<s>Game uses a custom FSR 3.0 interface which results in a crash when Optiscaler tries hooking the inputs. To fix crashes, set `Fsr3=false` in Optiscaler.ini and use DLSS or XeSS inputs</s>+++
+
+|**Notes**
+|-
+
+|**Reported By**
+|TheRazerMD
+|=== 

@@ -1,0 +1,35 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.7.7-pre13
+
+|**Filename**
+|`dxgi.dll`, `winmm.dll`
+
+|**OS**
+|Win 11
+
+|**GPU**
+|9070XT
+
+|**Inputs**
+|DLSS
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+a|
+* Testers reported using Opti as `dxgi.dll` worked fine, but some reported `winmm.dll` instead had to be used to boot
+* Recommended to test various supported Opti names if game not booting
+
+|**Notes**
+a|
+* **Only works for the Singleplayer Tarkov mod (SPT)!**
+
+|**Reported By**
+|-
+|=== 

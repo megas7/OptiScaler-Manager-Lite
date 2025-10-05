@@ -1,0 +1,32 @@
+[cols="1,1"]
+|===
+|**Version**
+|OptiScaler v0.7.7-pre5
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|-
+
+|**Inputs**
+|DLSS
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+|HUDfix doesn't work properly, so OptiFG can't work without HUD ghosting or it just duplicates frames - no working FG since no DLSS FG either, using `Output Scaling` (with DLSS) might cause graphical corruption after cutscenes 
+
+|**Notes**
+|GPU's without Dirext 12 Ultimate support (only works for GTX 1600 series, GTX 1000 series are not supported at all) should set `D3DFeatureLevel=true` from `OptiScaler.ini`
+
+|**Reported By**
+|mbvtouched
+|=== 

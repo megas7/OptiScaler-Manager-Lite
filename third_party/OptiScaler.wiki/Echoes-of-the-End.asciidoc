@@ -1,0 +1,34 @@
+[cols="1,1"]
+|===
+|**Version**
+|v0.7.9-RC3
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Windows 11 24H2
+
+|**GPU**
+|Radeon RX 7900 XTX
+
+|**Inputs**
+|DLSS 4, FSR 3.1
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|Nukem's DLSS-to-FSRG
+
+|**Known Issues**
+a|
+* As of Patch v1.02, in-game FSR 3.1 Frame Gen is still partially broken. (See Notes below for a solution.)
+
+|**Notes**
+a|
+* Using Nukem's `DLSS-to-FSRG-is-better.dll` (along with FakeMichau's `fakenvapi`) will grant you access to the in-game DLSS FG 2X and Nvidia Low Latency option.
+
+|**Reported By**
+|btanis20
+|=== 

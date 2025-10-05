@@ -1,0 +1,35 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.7.7-pre12
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|RX 6950XT
+
+|**Inputs**
+|DLSS, XeSS, FSR3.1 (check below)
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+a|
+* +++<s>Spoofing causes blue/dark texture corruptions on AMD/Intel - hence `Dxgi=false`</s>+++
+* Game patch 1.3 which updated the engine to UE 5.4 seems to have fixed the spoofing issue mentioned above
+* FSR 3.1 inputs require https://github.com/optiscaler/OptiScaler/wiki/Unreal-Engine-Tweaks#when-using-fsr31-inputs-game-is-crashing[this 3.1 inputs crashing fix], otherwise crash on switch - or just disable them with `EnableFfxInputs=false`, or on older Opti, `Ffx=false` in **Optiscaler.ini**  
+
+|**Notes**
+|-
+
+|**Reported By**
+|TheRazerMD
+|=== 

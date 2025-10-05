@@ -1,0 +1,32 @@
+[cols="1,1"]
+|===
+|**Version**
+|OptiScaler v0.7.7-pre5
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|RX 6950XT
+
+|**Inputs**
+|DLSS, XeSS, FSR2 (not working)
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|Recommend `FGType=nukems` since Nukem mod works
+
+|**Known Issues**
+|FSR2 inputs not working and instacrash, Raytracing disabled with spoofing - works with `Dxgi=false`
+
+|**Notes**
+|DLSS, XeSS, FG (with Nukem's `dlssg-to-fsr3`) all work, preset overriding works, `Fakenvapi` AL2 injection hit and miss - LFX might be better
+
+|**Reported By**
+|TheRazerMD
+|=== 

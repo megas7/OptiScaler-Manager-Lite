@@ -1,0 +1,36 @@
+[cols="1,1"]
+|===
+|**Version**
+|OptiScaler v0.7.7-pre9 (Daria)
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Windows 11 24H2, Windows 10 22H2
+
+|**GPU**
+|AMD Radeon 9070XT
+
+|**Inputs**
+|FSR2
+
+|**Settings**
+|`Dxgi=false`
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+a|
+* **Nvidia users need to add DLSS dll** since no nvngx_dlss.dll in the game -> simply download the file ( for example with DLSS Swapper / or copy it from the folder of any game that has DLSS ) and paste it next to Optiscaler
+* Autoswitching to DLSS on Nvidia causes a crash since no DLSS dll
+
+|**Notes**
+a|
+* AMD/Intel users, select **No** when asked about DLSS inputs
+* During installation, selecting DLSS instead of FSR as inputs will break Screen Space Reflections from the middle of the screen. No issues playing online on Epic Games Store.
+
+|**Reported By**
+|Matze4100, Harbi117
+|=== 

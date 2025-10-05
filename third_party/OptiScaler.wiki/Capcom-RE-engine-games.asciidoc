@@ -1,0 +1,36 @@
+[cols="1,1"]
+|===
+|**Version**
+|-
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|-
+
+|**GPU**
+|-
+
+|**Inputs**
+|-
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+a|
+* Capcom RE games in general **require REFramework** for Optiscaler to work
+* If using DLSS inputs keeps crashing, try enabling `RestoreComputeSignature=true` or `RestoreGraphicSignature=true` in **Optiscaler.ini** (or `Restore Compute/Graphic Root Signature` under Root Signatures menu in Opti Overlay)  
+* For MH Rise, `RestoreComputeSignature=true` was enough to fix DLSS crashes  
+* To fix GUI with DLSS inputs (with/without FG), try enabling `RestoreComputeSignature=true` or `RestoreGraphicSignature=true` in **Optiscaler.ini** (or `Restore Compute/Graphic Root Signature` under Root Signatures menu in Opti Overlay)
+
+|**Notes**
+|-
+
+|**Reported By**
+|-
+|=== 

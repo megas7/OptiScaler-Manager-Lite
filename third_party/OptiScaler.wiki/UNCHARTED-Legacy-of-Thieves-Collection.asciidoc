@@ -1,0 +1,32 @@
+[cols="1,1"]
+|===
+|**Version**
+|OptiScaler_v0.7.7-pre12
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Windows 10 IoT LTSC 2021
+
+|**GPU**
+|RX 9070 XT
+
+|**Inputs**
+|DLSS, FSR2
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+|-
+
+|**Notes**
+|Enable Auto Exposure when using FSR2 inputs.
+
+|**Reported By**
+|sashascurtu
+|=== 

@@ -1,0 +1,32 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.7
+
+|**Filename**
+|dxgi.dll
+
+|**OS**
+|Linux
+
+|**GPU**
+|RX6800
+
+|**Inputs**
+|DLSS/XeSS
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|OptiFG; Hudfix limit of 7 for XeSS inputs, 8 for DLSS inputs
+
+|**Known Issues**
+|in-game HDR causing stability issues
+
+|**Notes**
+|-
+
+|**Reported By**
+|FakeMichau
+|=== 

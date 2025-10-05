@@ -1,0 +1,105 @@
+#### Entry document format is **`AsciiDoc`**
+
+```
+[cols="1,1"]
+|===
+|**Version**
+|-
+
+|**Filename**
+|-
+
+|**OS**
+|-
+
+|**GPU**
+|-
+
+|**Inputs**
+|-
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+|-
+
+|**Notes**
+|-
+
+|**Reported By**
+|-
+|=== 
+```
+
+**Example**
+
+[cols="1,1"]
+|===
+|**Version**
+a|
+.For example:
+* v0.6.7
+* v0.6.8-preXX
+* v0.7.0-preXX
+
+|**Filename**
+a|
+.For example:
+* `dxgi.dll`
+* `winmm.dll`
+
+|**OS**
+a|
+.For example:
+* Windows 10 22H2
+* Windows 11 24H2
+* Linux/Ubuntu 24.04 with Wine8
+* SteamOS with Proton GE
+
+|**GPU**
+a|
+.For example:
+* AMD
+* Nvidia
+* Intel
+
+|**Inputs**
+a|
+.For example:
+* DLSS
+* XeSS
+* FSR2
+* FSR3
+* FSR3.1/FFX
+
+|**Settings**
+a|
+.Settings suggested for OptiScaler to work correctly, for example:
+* `ColorResourceBarrier=4`
+* `OverlayMenu=false`
+
+|**FG-Settings**
+a|
+.Settings neededed for FrameGen, for example:
+* `HighPriority=true`
+* `AllowAsync=false`
+
+|**Known Issues**
+a|
+.For example:
+* With FG crosshair flickers
+* Need to use `Capture List` for FG
+
+|**Notes**
+a|
+.For example:
+* Videos have flickering
+* To prevent shimmer use XeSS is possible
+
+|**Reported By**
+|-
+|=== 

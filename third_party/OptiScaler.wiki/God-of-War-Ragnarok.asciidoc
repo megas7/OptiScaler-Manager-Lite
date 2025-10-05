@@ -1,0 +1,32 @@
+[cols="1,1"]
+|===
+|**Version**
+|Optiscaler 0.7.0-pre86, 0.7.7-pre7
+
+|**Filename**
+|-
+
+|**OS**
+|Windows 11 24H2
+
+|**GPU**
+|AMD Radeon 6950XT
+
+|**Inputs**
+|DLSS, FSR3.1, XeSS
+
+|**Settings**
+|For Optiscaler.ini - `FGType=nofg` or `FGType=nukems` if using Nukem mod, for older nvngx.ini - `UseFGSwapChain=false`
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+|Hardcoded FSR 3.1 scale ratios (preset override doesn't work), OptiFG swapchain causes freezes/crashes
+
+|**Notes**
+|Nukem `dlssg-to-fsr3` version 0.121 fixed weird flickering, might require `Fix broken visuals` enabled in Opti Overlay if Debug view has green artifacts
+
+|**Reported By**
+|TheRazerMD
+|=== 

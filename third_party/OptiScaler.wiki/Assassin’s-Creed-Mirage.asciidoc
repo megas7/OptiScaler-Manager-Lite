@@ -1,0 +1,38 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.9.0-pre3 (20250911)
+
+|**Filename**
+|dxgi.dll
+
+|**OS**
+|Win 11 
+
+|**GPU**
+|RX 6500 M
+
+|**Inputs**
+|FSR2 , required to use DLSSG streamline inputs
+
+|**Settings**
+|`Dxgi=false`, requires **DLSSG Mod by LukeFZ**
+
+|**FG-Settings**
+|DLSSG via Streamline v2 -> XEFG
+
+|**Known Issues** a|
+* `Dxgi=false` is required for AMD GPUs , doesn't work without DXGI spoofing
+* `Warning: You are running an unsupported video driver, please update your driver for optimal performance.` might show up and wouldn't get unchecked **Requires disabling Ubisoft Overlay.** Click on your profile in the Ubisoft App, than settings, interface and uncheck Enable overlay in the compatible games. 
+* FSR FG is Hudfix incompatible , recommended to use XeFG
+
+|**Notes**  a| 
+* Download https://www.nexusmods.com/assassinscreedmirage/mods/48?tab=files[DLSSG Mod by LukeFZ]  
+* Extract Mod files to the game folder
+* Press `END` key to enable FG or edit `enableFrameGeneration: true` in `FSR2Streamline_config.json` ( generates after 1st launch )
+
+
+|**Reported By**
+|neostein
+|=== 
+

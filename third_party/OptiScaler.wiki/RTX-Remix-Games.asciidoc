@@ -1,0 +1,35 @@
+**Portal Prelude RTX**
+[cols="1,1"]
+|===
+|**Version**
+|OptiScaler v0.7.7-pre7 (20250320_041715)
+
+|**Filename**
+|winmm.dll
+
+|**OS**
+|Windows 11 24H2
+
+|**GPU**
+|Radeon RX 6600
+
+|**Inputs**
+|DLSS
+
+|**Settings**
+|VulkanUpscaler=31
+VulkanExtensionSpoofing=true
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+|Can't get FG to show up.
+Menu overlay doesn't show.
+
+|**Notes**
+|Updating RTX Remix improves performance a little, doesn't affect optiscaler.
+
+|**Reported By**
+|Mine18
+|=== 

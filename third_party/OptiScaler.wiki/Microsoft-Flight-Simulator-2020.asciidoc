@@ -1,0 +1,32 @@
+[cols="1,1"]
+|===
+|**Version**
+|-
+
+|**Filename**
+|-
+
+|**OS**
+|-
+
+|**GPU**
+|-
+
+|**Inputs**
+|-
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+|DLSS FG doesn’t provide a HUDless resource, so using Nukem’s `dlssg-to-fsr3` mod will result in HUD ghosting
+
+|**Notes**
+|-
+
+|**Reported By**
+|-
+|=== 

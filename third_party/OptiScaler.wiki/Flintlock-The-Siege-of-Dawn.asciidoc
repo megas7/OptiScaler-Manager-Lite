@@ -1,0 +1,35 @@
+[cols="1,1"]
+|===
+|**Version**
+|v0.7.7-pre9_Daria
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Windows 11 24H2
+
+|**GPU**
+|Radeon RX 7900 XTX
+
+|**Inputs**
+|DLSS 3.7, XeSS 1.2
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|When using OptiFG, toggling on `FG HUD Fix` with the default +1 value is required to eliminate any ghosting/garbling around the character(s) and HUD
+
+|**Known Issues**
+|-
+
+|**Notes**
+a|
+* Although the game doesn’t natively support FSR, FSR 3.X works fine (without any additional toggles needed) via DLSS inputs. (I haven't tested it with XeSS inputs, but I'm certain that it should work as well)
+* If you want to use Anti-Lag 2/LatencyFlex injection with OptiFG, then include both `fakenvapi`, and `nvapi64.dll` files within the Win64 folder (C:\SteamLibrary\steamapps\common\Flintlock The Siege of Dawn\Saltpeter\Binaries\Win64). Once the game recognizes the spoofed Nvidia GPU, you'll have access to the Nvidia Reflex Low Latency option
+* If you prefer to use Nukems' DLSSG-to-FSR3 mod over OptiFG, please refer to the bullet point above by also including the `dlssg_to_fsr3_amd_is_better.dll` file within the same folder. Once you set `FGType=nukems` in OptiScaler.ini and it's successfully recognized, the Frame Generation option will become available. Also, Reflex Low Latency will automatically be forced on, when using Frame Gen as well
+
+|**Reported By**
+|btanis20
+|===

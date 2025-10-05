@@ -1,0 +1,35 @@
+[cols="1,1"]
+|===
+|**Version**
+|Optiscaler 0.7.7-pre6, 0.7.7-pre7
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|RX 6950XT
+
+|**Inputs**
+|DLSS, FSR2 (not supported)
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|OptiFG not supported as HUDfix is incompatible
+
+|**Known Issues**
+a|
+* FSR2 inputs not supported  (set `Fsr2=false` in `OptiScaler.ini` to make DLSS available in game settings)
+* Requires using DLSS inputs, Frame Generation unlocked with Nukem `dlssg-to-fsr3` mod (and `Fakenvapi` for AL2/LFX injection)
+* Nukem's FG will make the game crash during intro logos if Epic overlay is not disabled. See issue https://github.com/optiscaler/OptiScaler/issues/101[#101] for more details.
+
+|**Notes**
+|To stop ghosting with FG, requires _**disabling Lens Distortion** and maybe **Vignette**_ in game settings - older game versions don't have settings exposed, requires disabling in game config `renderer.ini` (`"m_bLensDistortion": false` - check **PCGW** for more info)
+
+|**Reported By**
+|TheRazerMD
+|=== 

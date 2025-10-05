@@ -1,0 +1,32 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.9.0-pre4
+
+|**Filename**
+|`dxgi.dll`, `version.dll`
+
+|**OS**
+|Windows 11 24H2
+
+|**GPU**
+|AMD Radeon RX 9070 XT
+
+|**Inputs**
+|FSR3.1, DLSS
+
+|**Settings**
+|`Dxgi=false` if you want FSR inputs only
+
+|**FG-Settings**
+|OptiFG (Upscaler) -> XeFG seems to work well. If crashing on startup, change screen mode borderless -> fullscreen -> borderless.
+
+|**Known Issues**
+a|* Spoofing for DLSS(G) inputs (`Dxgi=auto`) causes a ~9% performance penalty. Use different inputs or see the notes section for a workaround.
+
+|**Notes**
+a|* DLSS(G) inputs without the performance penalty require https://github.com/optiscaler/OptiPatcher[OptiPatcher].
+
+|**Reported By**
+|san9, TheRazerMD
+|=== 

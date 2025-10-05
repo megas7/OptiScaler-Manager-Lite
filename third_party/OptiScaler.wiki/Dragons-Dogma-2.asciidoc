@@ -1,0 +1,40 @@
+[cols="1,1"]
+|===
+|**Version**
+|v0.7.7-pre12_20250630
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Windows 11 24H2
+
+|**GPU**
+|Radeon RX 7900 XTX
+
+|**Inputs**
+|DLSS 3.5, FSR 3.0
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|Nukem's DLSSG
+
+|**Known Issues**
+a|
+* If using DLSS inputs keeps crashing, try enabling `RestoreComputeSignature=true` or `RestoreGraphicSignature=true` in **Optiscaler.ini** (or `Restore Compute/Graphic Root Signature` under Root Signatures menu in Opti Overlay)  
+* For MH Rise, `RestoreComputeSignature=true` was enough to fix DLSS crashes  
+* To fix GUI with DLSS inputs (with/without FG), user reported `RestoreComputeSignature=true` was enough (or `Restore Compute Root Signature` under Root Signatures menu in Opti Overlay)
+* For this game, OptiFG works but it has a lot of ghosting/garbling around the HUD and characters. (Regardless of using FG HUD Fix; please see the Notes section for a solution.)
+
+|**Notes**
+a|
+* Requires REFramework to work
+* If you want to use Nukem's DLSS-to-FSRG, you'll need both `fakenvapi` and `dlss_to_fsr3_amd_is_better.dll` files within the root folder
+* When you're enabling Nvidia Frame Generation in settings, you cannot toggle Nvidia Low Latency mode when it's active. Instead, you can use LatencyFlex option to reduce the system latency
+* Guide for setting it up on Linux if no menus - https://github.com/optiscaler/OptiScaler/issues/606#issuecomment-3263399290[Linux guide]  
+
+|**Reported By**
+|Andy & btanis20
+|=== 

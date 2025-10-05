@@ -1,0 +1,37 @@
+[cols="1,1"]
+|===
+|**Version**
+|v0.7.7-pre9_Daria
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Windows 11 24H2
+
+|**GPU**
+|Radeon RX 7900 XTX
+
+|**Inputs**
+|DLSS 2
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|`FGType=optifg`
+
+|**Known Issues**
+a|
+* Using XeSS causes flickering in ambient occlusion and shadows, regardless of having `Auto Exposure ON`
+* Using XeSS or FSR via DLSS inputs will cause rainbow pixels to appear around smoke, dust, and other certain effects. (There's a way to resolve this below, in the Notes section.)
+* Using Opti FG causes ghosting/garbling around the HUD elements. Although using `FG HUD Fix` at +2 value (and beyond) addresses the issue, it also causes the game to feel sluggish in comparison to the default +1 setting 
+
+|**Notes**
+a|
+* Since the game uses FSR 1, you'll have to use the DLSS inputs if you want to use XeSS or FSR 2.X.X/3.X
+* To get rid of the rainbow pixels found in certain effects, you must play the game with Opti FG turned on 
+
+|**Reported By**
+|btanis20
+|===

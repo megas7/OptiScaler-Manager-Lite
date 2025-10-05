@@ -1,0 +1,56 @@
+[cols="1,1"]
+|===
+|**Version**
+a|
+OptiScaler_v0.7.7-pre12_20250705
+
+|**Filename**
+a|
+`dxgi.dll`
+|**OS**
+a|
+Windows 10 22H2
+
+|**GPU**
+a|
+* AMD 7900XTX
+
+|**Inputs**
+a|
+* DLSS
+
+|**Settings**
+a|
+* Enable spoofing, and enable DLSS in game.
+* `ColorResourceBarrier=4`
+* `MotionVectorResourceBarrier = 8`
+* `HUDFix = true`
+
+|**Game Settings**
+a|
+.Had some problems removing flickering white dots.
+I think one or more of these settings in `engine.ini` fixed it, or possibly the above nightly release fixed them.
+`%LocalAppData%\Oregon\Saved\Config\WindowsNoEditor\Engine.ini`:
+```
+[SystemSettings]
+r.PostProcessAAQuality=4
+r.MotionBlur.Max=0
+r.MotionBlurQuality=0
+r.DepthOfFieldQuality=0
+r.DefaultFeature.MotionBlur=0
+r.ViewDistanceScale=3
+r.StaticMeshLODDistanceScale=0.001
+r.SkeletalMeshLODBias=-1
+r.CustomDepth=0
+```
+
+|**Notes**
+a|
+.Both FSR3.1 upscaling and OptiFG framegen works fine.
+OptiFG does not add more than ~15% higher framerate however, so that is a little weird.
+In my tests OptiFG results in ~70-80fps, up from ~65fps, in areas that give heavy load (120fps screen).
+
+|**Reported By**
+a|
+Dead2
+|=== 

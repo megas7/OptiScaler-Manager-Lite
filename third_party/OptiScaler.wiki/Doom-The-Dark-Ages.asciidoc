@@ -1,0 +1,40 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.7.7-pre9, 0.7.7-pre11
+
+|**Filename**
+|`winmm.dll`
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|RX 6950XT
+
+|**Inputs**
+|FSR3.1, XeSS, DLSS (not working for AMD/Intel)
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+a|
+* DLSS inputs are not unlockable on AMD/Intel, spoofing doesn't work due to extra checks, Nukem also won't work on AMD consequently
+* RTSS overlay conflicts with Optiscaler - when RTSS active, Opti overlay is invisible, when you hide RTSS, Opti overlay works fine
+* While FSR FG is turned ON, RTSS overlay causes crashes - https://forums.guru3d.com/threads/doom-the-dark-ages-and-overlay-compatibility.456384/[workaround]
+* While FSR FG is turned ON, invoking Opti Overlay causes crashes - workaround is to disable FG first
+
+
+|**Notes**
+a|
+* Using Optiscaler as `winmm.dll` works
+* FSR 3.1 FG sadly isn't decoupled, but you can replace FSR with XeSS and still use FSR FG (should work with DLSS also)
+* To update the FSR DLL, replace the one in `amd-ffx` folder
+
+|**Reported By**
+|TheRazerMD
+|=== 

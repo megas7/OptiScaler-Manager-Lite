@@ -1,0 +1,34 @@
+[cols="1,1"]
+|===
+|**Version**
+|Optiscaler 0.7.0-pre86, 0.7.7-pre7
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Windows 11 24H2
+
+|**GPU**
+|AMD Radeon 6950XT
+
+|**Inputs**
+|DLSS + DLSS FG, FSR3 (check Known Issues), XeSS 
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|`FGType=Nukems` with Nukem's `dlssg-to-fsr3`
+
+|**Known Issues**
+|In order to fix FSR3 inputs crashing - use `-dx12` as launch command to force DX12 and add `r.FidelityFX.FSR3.UseNativeDX12=1` to game's `Engine.ini` config file (`AppData\Local\FMF2\Saved\Config\Windows`, check screenshot below)
+
+|**Notes**
+|Add `Fakenvapi` for DLSS inputs, Fakenvapi AL2 injection seems to work
+
+|**Reported By**
+|TheRazerMD
+|=== 
+
+image::https://github.com/user-attachments/assets/7c30626a-02de-456d-ba66-c4e4d5aae61c[engine ini]

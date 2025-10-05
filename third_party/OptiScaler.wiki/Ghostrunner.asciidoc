@@ -1,0 +1,35 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.9.0-pre3
+
+|**Filename**
+|`winmm.dll`
+
+|**OS**
+|Windows 11 24H2
+
+|**GPU**
+|RX 9070 XT
+
+|**Inputs**
+|DLSS
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+a|
+* DLSS setting may need to be toggled back on after every boot.
+* Spoofing for DLSS inputs (`Dxgi=auto`) causes a ~9% performance penalty. See the notes section for a workaround.
+
+|**Notes**
+a|* Run the game in DirectX 12 mode (launch option `-dx12`).
+* DLSS inputs without the performance penalty require https://github.com/optiscaler/OptiPatcher[OptiPatcher].
+
+|**Reported By**
+|san9
+|=== 

@@ -1,0 +1,35 @@
+[cols="1,1"]
+|===
+|**Version**
+|v0.7.7-pre12_20250630
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Windows 11 24H2
+
+|**GPU**
+|Radeon RX 7900 XTX
+
+|**Inputs**
+|DLSS 3.7
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|(Not available)
+
+|**Known Issues**
+|-
+
+|**Notes**
+a|
+* Since the game uses FSR 1, you'll have to use the DLSS inputs if you want to use XeSS or FSR 2.X.X/3.X
+* Since the game uses DX11, and you want to use XeSS or FSR 3.X, you'll need to update the `Dx11Upscaler` line from "auto" to "xess_12" or "fsr31_12"
+* Since the game uses DX11, you will not be able to use OptiFG since it's only supported in DX12
+
+|**Reported By**
+|btanis20
+|=== 

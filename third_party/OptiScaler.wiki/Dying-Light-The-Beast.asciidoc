@@ -1,0 +1,39 @@
+[cols="1,1"]
+|===
+|**Version**
+|v0.9-pre3
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|RX 9070XT
+
+|**Inputs**
+|DLSS, XeSS, FSR3.1
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+a|
+* DLSS FG HUDless broken (no point in using Nukem's mod or DLSSG SL inputs) - _simply impressive to say this for 2 games in a row, bravo Techland_   
+* Mouse click input not hooked properly - use keyboard to navigate and apply settings (arrow keys, Tab and Space)   
+* Reflex markers are working questionably, but needs verification
+
+
+|**Notes**
+a|
+* Officially the first game to implement FFX 2.0 SDK and FSR4 natively
+* Game has XeFG, but ships with XeSS 2.0 files. Updating to XeSS 2.1 unlocks XeFG for everyone and seems to work well.
+* SL Spoof seems to unlock everything on 9070XT, so `Dxgi=false` is recommended
+
+|**Reported By**
+|TheRazerMD
+|=== 

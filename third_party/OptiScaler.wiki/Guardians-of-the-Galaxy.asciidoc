@@ -1,0 +1,102 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.7.7-pre9
+
+|**Filename**
+|`dxgi.dll`, `version.dll`
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|RX 6950XT
+
+|**Inputs**
+|DLSS
+
+|**Settings**
+a|
+* If using BAT file and on **AMD/Intel**, select **Yes** to DLSS Inputs, but set `Dxgi=false` in Optiscaler.ini
+* `Dxgi=false` also needed for Manual steps on **AMD/Intel**
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+|Spoofing causes massive performance overhead, by far the biggest seen so far, hence the needed `Dxgi=false` setting for AMD/Intel - https://github.com/user-attachments/assets/852a2a8f-a85e-4788-99a0-36df58ca0167[Pre-spoof], https://github.com/user-attachments/assets/d5b97092-0d6c-48db-9855-991116d42a33[Post-spoof]
+
+|**Notes**
+a|
+* Game seems to expose DLSS inputs just by having a nvngx.dll file
+* DXCompiler no longer needed to be updated for XeSS 2.0, seems to work fine
+
+|**Reported By**
+|TheRazerMD
+|=== 
+
+---
+
+[cols="1,1"]
+|===
+|**Version**
+|v0.7.0-pre71 
+
+|**Filename**
+|`version.dll` 
+
+|**OS**
+|Windows
+
+|**GPU**
+|Nvidia
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+a|
+- With `dxgi.dll` & `winmm.dll` when using FG swapchain game is crashing
+- To be able to use DLSS Presets need to set `UseGenericAppIdWithDlss=true`
+
+|**Notes**
+|-
+
+|**Reported By**
+|Krispy
+|=== 
+
+---
+
+[cols="1,1"]
+|===
+|**Version**
+|v0.7.0-pre71 
+
+|**Filename**
+|`version.dll` 
+
+|**OS**
+|Windows
+
+|**GPU**
+|AMD
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+|If **XeSS** isn't working, requires updating the `dxcompiler.dll` - https://github.com/microsoft/DirectXShaderCompiler/releases[link], dxc_.zip - bin/x64 subfolder
+
+|**Notes**
+|Frame Generations works, HudFix is not working
+
+|**Reported By**
+|BayuPratama
+|=== 

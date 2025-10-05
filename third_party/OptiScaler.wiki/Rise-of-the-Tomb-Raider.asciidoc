@@ -1,0 +1,36 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.7.7-pre11, 0.7.7-pre12
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|6950XT, Radeon 780M (pre11)
+
+|**Inputs**
+|DLSS only game
+
+|**Settings**
+|If you want to use OptiFG, boot the game in DirectX 12 mode.
+
+|**FG-Settings**
+|HUDfix incompatible, but the game doesn't have much UI, so just FG Active might be worth it, but personal preference
+
+|**Known Issues**
+|Would recommend disabling DoF, Vignette Blur, Motion Blur, Lens Flare, Screen Effects and Film Grain
+
+|**Notes**
+|Should expose DLSS with dxgi method and spoofing. If it still doesn't expose DLSS, try using Michau's https://github.com/FakeMichau/fakenvapi[FakeNVapi]. If you get weird Xmas artifacts, try disabling in-game Screen Effects (other possible fixes - `AutoExposure=true` or in imGUI overlay, or `ColorResourceBarrier=4` in `Optiscaler.ini`) +
+https://github.com/user-attachments/assets/237c852c-4f8c-4f81-8397-ca06385bcf89[Xmas artifacts]
+
+|**Reported By**
+|TheRazerMD +
+Rayz0rum
+|=== 
+
+

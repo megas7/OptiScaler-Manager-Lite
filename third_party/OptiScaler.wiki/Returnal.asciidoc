@@ -1,0 +1,36 @@
+[cols="1,1"]
+|===
+|**Version**
+|v0.7.7-pre7_20250318
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|RX 6950XT
+
+|**Inputs**
+|DLSS, XeSS, FSR2 (not supported)
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|OptiFG seems to work with `HUDfix limit 1` and `FG Async`
+
+|**Known Issues**
+a|
+* XeSS inputs only work for XeSS->Opti XeSS or XeSS->FSR4   
+* FSR2 inputs not supported even with Engine.ini tweak command
+
+|**Notes**
+a|
+* `Dxgi=false` enough to get DLSS inputs, but SL spoof doesn't expose Reflex
+* `Dxgi=true` needed for **AMD/Intel** to unlock Reflex and DLSS FG for Nukems mod
+
+|**Reported By**
+|TheRazerMD
+|=== 

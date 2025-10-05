@@ -1,0 +1,42 @@
+[cols="1,1"]
+|===
+|**Version**
+|Optiscaler v0.7.7-pre7
+
+|**Filename**
+|`version.dll`, `winmm.dll` (UWP/GP), `dxgi.dll` (avoid for UWP/GP)
+
+|**OS**
+|Windows 10, Win 11 24H2
+
+|**GPU**
+|RTX 2080S, RX 6950XT
+
+|**Inputs**
+|DLSS + DLSS FG, FSR3 (check Known Issues)
+
+|**Settings**
+|Set `ColorResourceBarrier=0` in `Optiscaler.ini` to prevent crashing past title screen
+
+|**FG-Settings**
+|Set `FGType=Nukems` with Nukem's `dlssg-to-fsr3` v0.120+
+
+|**Known Issues**
+a|
+* Slight ghosting on weapons seems to be a lingering effect, not related to Nukems mod; 
+* To fix FSR3 inputs from crashing, add `r.FidelityFX.FSR3.UseNativeDX12=1` to game's `Engine.ini` config file (check screenshot below, _%LOCALAPPDATA%\Alabama\Saved\Config\Windows_ or _WinGDK_) (might crash on switch to 3rd person perspective)
+* GamePass users might have to delete the Config folder to reset settings if not working after everything
+* For fixing UW issues where upscaler context breaks in cutscenes/dialogues, check https://github.com/optiscaler/OptiScaler/issues/332#issuecomment-2940618823[link]
+
+|**Notes**
+|Haven't seen any issues after hours of playing. Framegen works well.
+
+
+|**Reported By**
+|congle & 𝔏𝔲𝔠𝔦𝔣𝔢𝔯, TheRazerMD
+|=== 
+
+image::https://github.com/user-attachments/assets/9afccb44-8dad-474e-a56c-abefd1cdea5a[Menu]
+
+image::https://github.com/user-attachments/assets/a199f6e4-9ba0-4df8-b275-dd7f1edbe00a[engine ini]
+

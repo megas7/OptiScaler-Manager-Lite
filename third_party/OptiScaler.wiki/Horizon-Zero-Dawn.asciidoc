@@ -1,0 +1,37 @@
+[cols="1,1"]
+|===
+|**Version**
+|v0.7-pre23, pre66, pre92, v0.7.7-pre2, pre4, 0.7.7-pre9
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Windows 11 Home 23H2, Win 11 24H2
+
+|**GPU**
+|AMD Radeon RX 570 8GB, RX 580 2048sp 8GB, RX 6600M, RX 6950XT
+
+|**Inputs**
+|DLSS
+
+|**Settings**
+|`Dxgi=false` (**AMD/Intel only** - for foliage Known Issue), or select **No** for DLSS Inputs when using the BAT file
+
+|**FG-Settings**
+|Disable Motion Blur in the game settings. +
+Turn on Opti Frame Generation through Optiscaler menu after pausing game. (Press Esc then Insert)
+
+|**Known Issues**
+|https://github.com/optiscaler/OptiScaler/issues/38[Foliage and trees flicker/disappear] if spoofing on an non-Nvidia GPU with `dxgi=true` - check Notes for fix  
+
+
+|**Notes**
+a|
+* To fix the flickering foliage and trees on **AMD/Intel**, download https://github.com/MOVZX/CyberFSR2/releases/tag/2.0.0.15[Goghor's DLSS Unlocker], transfer only the `winmm.dll` to game folder with Opti, and set `Dxgi=false` in `Optiscaler.ini` - https://github.com/optiscaler/OptiScaler/issues/435#issuecomment-2836369684[full steps if needed]
+* Better to avoid RTSS with Opti FG
+* RX 570 8GB, RX 580 2048sp 8GB: Game may work on a 4GB card, but VRAM usage may could be an issue with higher settings or OptiFG 
+
+|**Reported By**
+|ViamoIam, TheRazerMD
+|=== 

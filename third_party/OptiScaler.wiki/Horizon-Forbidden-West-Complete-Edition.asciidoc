@@ -1,0 +1,33 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.7.9
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|-
+
+|**GPU**
+|-
+
+|**Inputs**
+|DLSS, FSR3.1, XeSS
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+a|
+* Nukem mod not feeling correctly paced - disable in-game Sharpness as it seems to be included in the HUDless
+
+|**Notes**
+|-
+
+|**Reported By**
+|-
+|=== 

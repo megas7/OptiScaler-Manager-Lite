@@ -1,0 +1,43 @@
+[cols="1,1"]
+|===
+|**Version**
+|v0.7.7-pre4
+
+|**Filename**
+|`dxgi.dll`, try `version.dll` if not working
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|RX 6950XT
+
+|**Inputs**
+|DLSS, XeSS, FSR2 (not working)
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+a|
+* DLSS FG HUDless broken (no point in using Nukem's mod)   
+* HUDfix broken (no point in using OptiFG -> FSR FG) - XeFG might be its saving grace   
+* Changing in-game Sharpness may result in crash - recommend using Sharpness Override in Optiscaler overlay   
+* Mouse click input not hooked properly - use keyboard to navigate and apply settings (arrow keys, Tab and Space)   
+* FSR2 inputs not working   
+* Fakenvapi AL2 injection can cause microstutters? - try using LFX (and restart the game if live switching)  
+
+|**Notes**
+a|
+* Run the game in **DX12**.  
+* For AMD(Intel) users, requires using Michau's `Fakenvapi` to expose DLSS properly.  
+* Changing upscaler inputs might cause the game to have a spasm, so recommended to restart the game afterwards. 
+
+_Overall, game is held up by duct tape and good wishes._
+
+|**Reported By**
+|TheRazerMD
+|=== 

@@ -1,0 +1,29 @@
+[cols="1,1"]
+|===
+|**Version**
+|v0.7.7-pre11
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Windows 11 24H2
+
+|**GPU**
+|AMD Radeon 780M (ROG Ally)
+
+|**Settings**
+|For Optiscaler.ini - `FGType=nofg` or `FGType=optifg` for OptiFG (For OptiFG to work and not crash the game, you need v0.7.7-pre11. It's on the Discord Server). Don't forget to Force Enable fakenvapi (for NVIDIA GPUs, I don't know how to force enable NVIDIA Reflex. I only have AMD, I only tried Anti-Lag 2)
+
+|**FG-Settings**
+|For OptiFG, enable HUD Fix (Limit 1 worked fine for me), and use FG Immediate Capture for HUDFix to work. You can also use FG Async for a small boost in FPS
+
+|**Known Issues**
+|Game flickers crazily with OptiFG on. To fix it, Go to Advanced OptiFG settings -> Tracking Settings, and enable Always Track Heeps.
+
+|**Notes**
+|Optiscaler overrides XeSS post-1.3 Ultra Performance, Performance, Balanced, Quality and Ultra Quality settings with DLSS values. Use `QualityRatioOverrideEnabled = true`, and change it like this: Ultra Quality: 1.5, Quality: 1.7, Balanced: 2.0, Performance: 2.2.
+
+|**Reported By**
+|Rayz0rum
+|=== 

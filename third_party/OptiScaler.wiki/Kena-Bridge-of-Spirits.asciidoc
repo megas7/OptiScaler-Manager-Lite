@@ -1,0 +1,32 @@
+[cols="1,1"]
+|===
+|**Version**
+|OptiScaler 0.7.7.12
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Windows 10
+
+|**GPU**
+|Radeon RX 6650 XT
+
+|**Inputs**
+|DLSS
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|OptiFG + HUDFix 1
+
+|**Known Issues**
+|-
+
+|**Notes**
+|Nvidia spoofing required with `Dxgi=true`.
+
+|**Reported By**
+|Ryusennin
+|===

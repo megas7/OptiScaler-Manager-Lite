@@ -1,0 +1,42 @@
+[cols="1,1"]
+|===
+|**Version**
+|OptiScaler_0.7.9-RC3 
+
+|**Filename**
+|`dxgi.dll`, `winmm.dll`
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|RX 9070XT
+
+|**Inputs**
+|DLSS
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|OptiFG, `HUDfix limit` = 1 (might depend on GPU vendor), Hudfix needs default brightness settings.
+
+|**Known Issues**
+|To make **XeSS** work, requires updating the `dxcompiler.dll` - https://github.com/microsoft/DirectXShaderCompiler/releases[link], dxc_.zip - bin/x64 subfolder
+
+|**Notes**
+|Since the latest update merged the unofficial HDR mod, Optiscaler should work fine on its own and OptiFG should also be fixed. Follow above steps for fixing XeSS. 
+
+|**Reported By**
+|PhazDelta, TheRazerMD, SuperVargen
+|=== 
+
+
+Control works with FSR4 and FSR4 4.0.2 now.
+
+
+1. Use OptiScaler_0.7.9-RC3 for FSR4 4.0.2
+2. Use option 1-1-2 during installation - should work without spoofing, but if not, then set `Dxgi=true` in Optiscaler.ini 
+4. When in game, turn on DLSS in game setting. Then switch to FSR3.X in Optiscaler UI. Now you you should see FSR4.
+5. Save to ini and close Optiscaler UI.
+6. Done.

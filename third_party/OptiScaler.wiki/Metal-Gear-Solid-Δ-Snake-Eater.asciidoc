@@ -1,0 +1,50 @@
+[cols="1,1"]
+|===
+|**Version**
+|v0.9.0-pee1
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Windows 11 24H2
+
+|**GPU**
+|Radeon RX 7900 XTX
+
+|**Inputs**
+|DLSS 3.1, FSR 3
+
+|**Settings**
+|`HUD Fix 2+ & Force Reflex (Force Enabled)` for OptiFG
+
+|**FG-Settings**
+|`Optiscaler (Upscaler) -> FSR FG` or `Nukem's DLSSG -> FSR-FG via Nukem`
+
+|**Known Issues**
+a|
+* After some brief testing, it appears that selecting `Optiscaler (Upscaler) -> XeFG` doesn't work. (See Notes section for a solution.)
+* After extensively playing, it appears that using `Nukem's DLSSG -> FSR-FG via Nukem` is causing Improper Frame Pacing for every other third frame. Reverting to OptiFG alleviated this problem for my rig. (Your mileage may vary, considering that some people aren't experiencing this issue.)
+
+|**Notes**
+a|
+* The game has slight ghosting/garbling around the HUD, when using OptiFG; enabling HUD Fix 2+ will completely eliminate this.
+* As of Ver. 1.1.2, the game still doesn't feature DLSS Frame Generation, FSR 3 Frame Generation and Nvidia Reflex. However, the game contains those necessary plugins; it's just not visible in the Graphics Settings to the end user. To enable them, go to C:\Users\[User Name]\App Data\Local\MGSDelta\Saved\Config\Windows and click on `Engine.ini`. Scroll all the way to the bottom and add the following lines below (the ones starting with `[SystemSettings]`).
+* After adding those lines, add Nukem's `dlss-to-fsr3-amd-is-better.dll` and FakeMichau's `fakenvapi` into the root game folder and you'll see both DLSSG and Anti-Lag 2/XeLL running.
+
+**DLSS Frame Gen On, Reflex On, and Reflex On (not On + Boost) Mode Selected:**
+```
+[SystemSettings]
+r.Streamline.DLSSG.Enable=1
+t.Streamline.Reflex.Enable=1
+t.Streamline.Reflex.Mode=1
+```
+
+**FSR 3 Frame Gen:**
+```
+[SystemSettings]
+r.FidelityFX.FI.Enabled=1
+
+|**Reported By**
+|btanis20 & hatarist
+|=== 

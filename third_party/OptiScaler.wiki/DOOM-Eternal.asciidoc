@@ -1,0 +1,39 @@
+[cols="1,1"]
+|===
+|**Version**
+|v0.7.7-pre13
+
+|**Filename**
+|`winmm.dll`, `winhttp.dll`
+
+|**OS**
+|Windows
+
+|**GPU**
+|AMD
+
+|**Inputs**
+|DLSS
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+a|
+* FSR3.1 crashes, requires custom FFX VK dll - https://github.com/user-attachments/files/19523229/EternalFSR31VKcustom.zip[link]
+* RTSS overlay conflicts with Optiscaler - when RTSS active, Opti overlay is invisible, when you hide RTSS, overlay works fine
+
+
+|**Notes**
+a|
+* Use Optiscaler as `winmm.dll`
+* For AMD/Intel, requires using OptiPatcher to expose DLSS setting and keep Raytracing possible - https://github.com/optiscaler/OptiPatcher/releases[link]
+* Put **OptiPatcher.asi** in a `plugins` folder, and set `LoadAsiPlugins=true` in Optiscaler.ini (requires Opti Pre12 or newer)
+* OptiPatcher also works for Sandbox mode
+
+|**Reported By**
+|Apricorum & bluestang, TheRazerMD
+|=== 

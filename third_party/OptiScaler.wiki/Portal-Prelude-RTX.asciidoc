@@ -1,0 +1,33 @@
+[cols="1,1"]
+|===
+|**Version**
+|OptiScaler v0.7.7-pre13 (20250731)
+
+|**Filename**
+|winmm.dll
+
+|**OS**
+|Windows 11 24H2
+
+|**GPU**
+|Radeon RX 6600
+
+|**Inputs**
+|DLSS
+
+|**Settings**
+|VulkanExtensionSpoofing=true
+
+|**FG-Settings**
+|No FG, option is blanked.
+
+|**Known Issues**
+|Menu overlay doesn’t show.
+
+|**Notes**
+|Updating RTX Remix improves performance a little, doesn't affect Optiscaler.
+Don't use FakeNVapi, causes the game to crash.
+
+|**Reported By**
+|Mine18
+|=== 

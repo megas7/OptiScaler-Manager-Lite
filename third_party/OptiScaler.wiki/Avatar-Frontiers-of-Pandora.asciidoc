@@ -1,0 +1,37 @@
+[cols="1,1"]
+|===
+|**Version**
+|OptiScaler_v0.7.7-pre9
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|RX 6950XT
+
+|**Inputs**
+|DLSS, XeSS, FSR3 (not working)
+
+|**Settings**
+|`Fsr3=false`, `Dxgi=false`
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+a|
+* Game uses a custom FSR 3.0 interface which results in a crash when Optiscaler tries hooking the inputs. To fix crashes, set `Fsr3=false` in Optiscaler.ini and use XeSS inputs on AMD/Intel
+* Spoofing has a big performance overhead (cca 20%) and seems to break rendering (atleast in dark places) - recommended `Dxgi=false` in Optiscaler.ini - 
+https://github.com/user-attachments/assets/f0df805e-4dd7-42f0-a534-8ca63310b085[Pre-spoof], https://github.com/user-attachments/assets/18a2d4b8-2cf4-48c5-90f7-07258c547c2d[Post-spoof]
+
+|**Notes**
+a|
+* On AMD, recommended to disable spoofing and use XeSS inputs due to previously mentioned issues
+* Preset ratios are locked, can't override through Optiscaler; Ultra Quality is 1.2 ratio, Scaling mode Biased seems to dynamically alter the ratio, and Scaling mode Off forces Native AA (1.0 scaling) for the upscaler
+
+|**Reported By**
+|TheRazerMD
+|=== 

@@ -1,0 +1,37 @@
+[cols="1,1"]
+|===
+|**Version**
+|- 0.9.0 pre 2 
+
+|**Filename**
+|- dxgi
+
+|**OS**
+|- w11
+
+|**GPU**
+|- rx 7600s
+
+|**Inputs**
+|- FSR 3 
+
+|**Settings**
+|- deactivate motion blur, and all the effects from the bottom
+
+|**FG-Settings**
+|- read notes
+
+|**Known Issues**
+|- Game have to be boardless fullscreen, if is not, it will instant crash. The game won't let you select DLSSFG with any of the mods we know of (Nukems, optiscaler 0.7.x) EVEN WITH THE -DLSSFG command. I explain how to get frame generation working in the notes. You also won't be able to use the game's native reflex version. Deactivate the reflex injection from RTSS, it cause massive stuttering when using XeLL (RTSS)
+
+|**Notes**
+|- READ ALL, VERY IMPORTANT. This compatibility list is for Gamepass version of the game, probably steam version doesnt have many problems. First,  you have to uninstall the Easy anticheat from the game, the  game has this option from the files, just find it. You have to create a shortcut on the desktop of the game's exe, keep in mind that in Unreal Engine games, the exe ends in "name of the game -WinGDK-Shipping", after having the shortcut on the desktop, you will enter the properties of the shortcut and in the destination, at the end you will add a space and then write the following command: 
+-FSRFG, to activate the amd frame generation, This game has fsrfg decoupled, but in the game settings it will appear greyed out when you don't have fsr(upscaler) enabled, so when you select DLSS as upscaler, make sure you have had enabled fsrfg, Also if you want to use DLSS imputs for whatever reason, you have to enable fsr (upscaler and fg ) every time you go in to the game, so i recommend just use fsr 3 as imputs. you can use this Fsrfg imputs to use XeFG without no problems with the hud.  
+https://imgur.com/a/2d8oFLi
+
+
+
+
+|**Reported By**
+|- Valarck
+|=== 

@@ -1,0 +1,38 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.9.0-pre2
+
+|**Filename**
+|`dxgi.dll`, `version.dll`, `dbghelp.dll`, `winmm.dll`
+
+|**OS**
+|Windows 11 24H2
+
+|**GPU**
+|AMD Radeon 6950XT
+
+|**Inputs**
+|DLSS, FSR2 (not supported)
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|`nukems`; 0.9.0 onwards: DLSSG via Streamline input, FSRFG or XeFG output
+
+|**Known Issues**
+a|
+* FSR2 inputs not supported.
+* Overlay doesn't work consistently in fullscreen mode - use fullscreen windowed for best compatibility.
+* Mouse could be bounded to the game, either go to the game menu or use keyboard to navigate through Optiscaler overlay.
+* Subtitles and other text in cutscenes may appear blurry when using Nukem mod.  
+* Linux requires `dxvk.conf` spoofing for whatever reason - https://github.com/optiscaler/OptiScaler/blob/master/Spoofing.md#linux[link]
+
+|**Notes**
+a|
+* Use DLSS inputs as that unlocks DLSS FG with Nukem mod too (requires `Fakenvapi` if not exposed, also gives AL2)
+
+|**Reported By**
+|TheRazerMD, san9
+|=== 

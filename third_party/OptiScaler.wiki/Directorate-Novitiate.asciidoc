@@ -1,0 +1,35 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.9.0-pre4
+
+|**Filename**
+|`dxgi.dll`, `winmm.dll`
+
+|**OS**
+|Windows 11 24H2
+
+|**GPU**
+|AMD
+
+|**Inputs**
+|DLSS, FSR3.1, XeSS
+
+|**Settings**
+|-
+
+|**FG-Settings**
+a|* Native XeFG: only works with XeSS inputs and `Dxgi=false`.
+* Otherwise, DLSSG via Streamline as source, XeFG / FSRFG as output.
+
+|**Known Issues**
+a|* XeSS inputs are stuck at 1.0 (native) ratio, override doesn't work.
+* XeSS inputs only work for XeSS or FSR4 output.
+* DLSS input, FSR4 output - flickering on Balanced preset.
+
+|**Notes**
+|Tested on demo version
+
+|**Reported By**
+|san9
+|=== 

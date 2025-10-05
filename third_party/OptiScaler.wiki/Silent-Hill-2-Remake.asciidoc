@@ -1,0 +1,32 @@
+[cols="1,1"]
+|===
+|**Version**
+|Optiscaler 0.7.0-pre86
+
+|**Filename**
+|-
+
+|**OS**
+|Windows 11 24H2
+
+|**GPU**
+|AMD Radeon 6950XT
+
+|**Inputs**
+|DLSS, FSR3.1
+
+|**Settings**
+|`Dxgi=false` (if you only want FSR inputs and no spoofing)
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+|XeSS needs **Auto Exposure ON** in overlay - otherwise flickery (or `Autoexposure=true` in nvngx.ini)
+
+|**Notes**
+|-
+
+|**Reported By**
+|TheRazerMD
+|=== 

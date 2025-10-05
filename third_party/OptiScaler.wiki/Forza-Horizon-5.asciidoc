@@ -1,0 +1,41 @@
+[cols="1,1"]
+|===
+|**Version**
+|OptiScaler_v0.7.7-pre9, pre13
+
+|**Filename**
+|`OptiScaler.asi`
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|
+
+|**Inputs**
+|DLSS, XeSS, FSR2 (not working)
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+a|
+* Requires using OptiScaler as `OptiScaler.asi` with `Ultimate ASI Loader`, otherwise crashes on launch - check **Notes**
+* Might also require `Fakenvapi`
+* MS Store/GP version of the game is supported, but **Opti Overlay does not work** - requires changing settings through `OptiScaler.ini` - https://github.com/optiscaler/OptiScaler/issues/462[link]
+* FSR2 inputs don't work and should be disabled with `EnableFsr2Inputs=false`, newer Pre12 automatically force this
+
+|**Notes**
+a|
+* Set `LoadAsiPlugins=true` in `OptiScaler.ini`
+* Download https://github.com/ThirteenAG/Ultimate-ASI-Loader/releases[Ultimate ASI Loader x64]  
+* Rename ASI loader dll (_usually dinput8.dll_) to `winmm.dll`, add it to the game folder where OptiScaler is installed as `OptiScaler.asi`  
+* Reactive Mask Bias at 0.65 seems to fix the flickering lights and improve car ghosting  
+
+
+|**Reported By**
+|TheRazerMD
+|=== 

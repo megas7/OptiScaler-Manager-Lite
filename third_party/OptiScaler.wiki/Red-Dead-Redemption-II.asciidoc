@@ -1,0 +1,77 @@
+[cols="1,1"]
+|===
+|**Version**
+|v0.7.7-pre7, pre13
+
+|**Filename**
+|`winmm.dll`, `version.dll`
+
+|**OS**
+|-
+
+|**GPU**
+|-
+
+|**Inputs**
+|DLSS, FSR2 (check notes)
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|OptiFG is very hit and miss in this game, it either works or it flat out doesn't (from older versions, 0.7-pre66 used to work)
+
+|**Known Issues**
+a|
+* OptiFG HUDfix might not be working properly, depending on the version
+* Spoofing causes weird rendering artifacts/crashes in certain places (like Valentine discoball artifact, or broken lights in cities) - **fixed when using https://github.com/optiscaler/OptiPatcher[OptiPatcher]** - check https://github.com/optiscaler/OptiScaler/issues/388#issuecomment-3121911286[comment]
+
+|**Notes**
+a|
+* **DirectX 12 is recommended to be used**, Vulkan is problematic
+* Use Optiscaler as `winmm.dll` to successfully load, **AMD/Intel** users also need `Fakenvapi` if DLSS isn't exposed
+* Renaming Optiscaler.dll to `OptiScaler.asi` and using https://github.com/ThirteenAG/Ultimate-ASI-Loader/releases[Ultimate ASI Loader x64] as `winmm.dll`/`version.dll` also works - **most compatible way, needed for OptiPatcher way due to RGL**
+* FSR2 inputs are questionable, Steam version crashes, so disable FSR2 in game settings before adding Optiscaler (or set `Fsr2=false` in Optiscaler.ini, automatically done in 0.7.7-pre12 and above) - recommended to use DLSS inputs
+* If Optiscaler isn't working (generally Vulkan), another possible way should be renaming Optiscaler.dll to `nvngx.dll` and using https://github.com/0x-FADED/RDR2-NVNGX-Loader[RDR2-NVNGX-Loader] with Optiscaler (overlay may not work). - **_FSR4 Upgrade not supported this way, also outdated thanks to OptiPatcher_**
+* Compatible with Lenny's Mod Loader
+* Turning on NV Reflex with Fakenvapi can cause stutters.
+
+|**Reported By**
+|nitec, TheRazerMD
+|=== 
+
+[cols="1,1"]
+|===
+|**Version**
+|v0.7.7-pre9
+
+|**Filename**
+|`OptiScaler.asi`
+
+|**OS**
+|W10 Pro 22H2
+
+|**GPU**
+|GTX 1060 6 GB
+
+|**Inputs**
+|DLSS
+
+|**Settings**
+|Windowed Borderless
+
+|**INI Settings**
+|`VulkanUpscaler = fsr21`, `FGType = nofg`, `AutoExposure = true`, `HDR = true`, `DisableReactiveMask = true`
+
+|**Known Issues**
+|Changing to Fullscreen in the menu or through Alt + Enter causes the overlay to disappear until restarting
+
+|**Notes**
+a|
+* Vulkan instructions only
+* Use https://www.nexusmods.com/reddeadredemption2/mods/1472[ScriptHookRDR2 V2] to load the ASI
+* Enable Microsoft Detours API Hooking in RTSS to avoid crashing on startup
+
+|**Reported By**
+|Markie98
+|=== 

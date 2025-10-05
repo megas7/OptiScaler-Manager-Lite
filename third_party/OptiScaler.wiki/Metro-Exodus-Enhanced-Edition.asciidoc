@@ -1,0 +1,40 @@
+[cols="1,1"]
+|===
+|**Version**
+|OptiScaler v0.7.7-pre5, 0.7.7-pre12
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|RX 6950XT
+
+|**Inputs**
+|DLSS
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|`FGType=nofg`
+
+|**Known Issues**
+a|
+* Upscalers work, but Optiscaler Overlay does not and can't be invoked due to not being able to capture keyboard inputs (**check Notes**) - change settings in `Optiscaler.ini`/`nvngx.ini` only.
+* OptiFG is HUDfix incompatible, can't capture the HUD/UI fully
+
+|**Notes**
+a|
+* Enhanced edition is the only version with DLSS 2, Standard edition is not supported due to DLSS1  
+
+* **Workaround for invisible Overlay** - in combination with **SpecialK**, Opti Overlay becomes visible and useable (albeit mouse input still doesn't work, so KBM is required - arrow keys, Tab and Space)
+* Install SpecialK using Opti's **"plugins"** folder method https://github.com/optiscaler/OptiScaler/wiki/Compatibility-with-other-mods-(Reshade,-SpecialK)[(link)] - get `SpecialK64.dll`, rename it to whatever you renamed Opti (usually `dxgi.dll`) and put it in a "plugins" folder where Metro game exe is located - https://github.com/user-attachments/assets/dd7cfde7-a0ae-44fe-bfec-e8cd4b839de7[Tutorial]
+
+* When using FSR4 on-screen corruption with all presets but best with Balanced/Ultra Performance, recommended to use FSR 4.0.0, as 4.0.1 is worse in that regard.
+
+|**Reported By**
+|Vladzor, TheRazerMD
+|=== 

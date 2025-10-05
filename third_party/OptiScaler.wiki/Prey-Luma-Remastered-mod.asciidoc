@@ -1,0 +1,35 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.7.7-pre13
+
+|**Filename**
+|`OptiScaler.asi` for best compatibility
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|RX 6950XT
+
+|**Inputs**
+|DLSS from LR mod
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+|-
+
+|**Notes**
+a|
+* Requires https://www.nexusmods.com/prey2017/mods/149[**Prey Remastered - Luma mod**], which requires **ReShade with Add-on support** (read the mod's Readme for installation steps)  
+* Recommended to use Opti as `OptiScaler.asi` + ReShade as `ReShade.asi` (rename Reshade's `dxgi.dll` to `ReShade.asi`) + https://github.com/ThirteenAG/Ultimate-ASI-Loader/releases[Ultimate ASI Loader x64] (works as default `dinput8.dll`)
+* https://github.com/user-attachments/assets/8028c9cc-08a7-4a96-944b-4df91e75e61e[Folder screenshot], https://github.com/user-attachments/assets/c9e57f70-1d31-4b08-b185-e87c9e90a833[Game screenshot]
+
+|**Reported By**
+|TheRazerMD
+|=== 

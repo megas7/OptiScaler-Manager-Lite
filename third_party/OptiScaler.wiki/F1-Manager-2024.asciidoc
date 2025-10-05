@@ -1,0 +1,32 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.9.0-pre4
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Windows 11 24H2
+
+|**GPU**
+|AMD
+
+|**Inputs**
+|FSR2 (unsupported), DLSS
+
+|**Settings**
+|`EnableFsr2Inputs = false` if crashing
+
+|**FG-Settings**
+|Untested
+
+|**Known Issues**
+|FSR2 inputs crash, even with the https://github.com/optiscaler/OptiScaler/wiki/Unreal-Engine-Tweaks[crashfix]
+
+|**Notes**
+|https://github.com/optiscaler/OptiPatcher[OptiPatcher] recommended, as spoofing typically has a ~9% performance penalty.
+
+|**Reported By**
+|san9
+|=== 

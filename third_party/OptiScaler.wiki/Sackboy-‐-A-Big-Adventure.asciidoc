@@ -1,0 +1,35 @@
+[cols="1,1"]
+|===
+|**Version**
+|v0.7.7-pre12_20250630
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Windows 11 24H2
+
+|**GPU**
+|Radeon RX 7900 XTX
+
+|**Inputs**
+|DLSS 2.4
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|OptiFG
+
+|**Known Issues**
+a|
+* At the time of reporting this, with the latest Adrenalin 25.6.3 driver, using Nukem's DLSS-to-FSRFG causes erratic frametime spikes. (Your mileage may vary; please see the Notes section for a solution.) 
+
+|**Notes**
+a|
+* Since the game only features DLSS, you'll have to use the DLSS inputs if you want to use XeSS or FSR 2.X.X/3.X. (You'll need `fakenvapi` for this to work.)
+* Using OptiFG works as intended, along with having smoother frametimes and higher 1% Lows compared to the DLSSG method.
+
+|**Reported By**
+|btanis20
+|=== 

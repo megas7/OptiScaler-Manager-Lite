@@ -1,0 +1,32 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.7.7-pre7
+
+|**Filename**
+|-
+
+|**OS**
+|-
+
+|**GPU**
+|-
+
+|**Inputs**
+|DLSS, FSR3.1, XeSS
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+|**Requires disabling Ubisoft Overlay.** Click on your profile in the Ubisoft App, than settings, interface and uncheck Enable overlay in the compatible games. Also some weird behaviour where you need to enable FSR Frame Gen to be able to open OptiScaler menu sometimes. 
+
+|**Notes**
+|Using DLSS inputs and Nukem's FG works without issue.
+
+|**Reported By**
+|Cryssness
+|=== 

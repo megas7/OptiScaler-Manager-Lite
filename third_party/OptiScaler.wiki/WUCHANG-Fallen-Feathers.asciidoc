@@ -1,0 +1,36 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.9.0-pre4
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Windows 11 24H2
+
+|**GPU**
+|AMD Radeon RX 9070 XT
+
+|**Inputs**
+|FSR3.1, DLSS
+
+|**Settings**
+|`Dxgi=false` recommended on AMD/Intel (FSR3.1 input only)
+
+|**FG-Settings**
+a|* FSR3.1 FG / DLSSG via Streamline source -> XeFG output
+
+|**Known Issues**
+a|* Using FSR4 at 77%-99% res, force "Model 1" to avoid foliage flickering.
+* Resolution slider messes with FSR4 model selection, be sure to "reset" model (select a random one then default again) in case of flickering.
+* When using DLSS input & FSR4 output, upon restarting, the resolution slider doesn't set the resolution % correctly, and resets to the nearest preset instead. Not an issue with FSR3.1 input.
+* Spoofing for DLSS(G) inputs (`Dxgi=auto`) causes a ~9% performance penalty. Use different inputs instead with `Dxgi=false` or see the notes section for a workaround.
+
+|**Notes**
+a|* Older game versions didn't allow 100% resolution scale, as of patch 1.5.1 it seems to be working.
+* DLSS(G) inputs without the performance penalty require https://github.com/optiscaler/OptiPatcher[OptiPatcher].
+
+|**Reported By**
+|san9
+|=== 

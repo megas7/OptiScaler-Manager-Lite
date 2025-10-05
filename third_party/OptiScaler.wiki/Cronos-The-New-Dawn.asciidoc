@@ -1,0 +1,69 @@
+[cols="1,1"]
+|===
+|**Version**
+|v0.7.9-RC3
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Windows 11 24H2
+
+|**GPU**
+|Radeon RX 7900 XTX
+
+|**Inputs**
+|DLSS 4, FSR 3.1, XeSS 2.1
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|Nukem's DLSSG
+
+|**Known Issues**
+|-
+
+|**Notes**
+a|
+* With Nukem's `dlss-to-fsr3-amd-is-better.dll` and FakeMichau's `fakenvapi`, the game will recognize the spoofed Nvidia GPU with no issues.
+* The game also features FSR 3.1 Frame Generation so leave "FGType = auto" in the `Optiscaler.ini` file, if you plan on using the in-game Frame Gen.
+
+|**Reported By**
+|btanis20
+|=== 
+
+[cols="1,1"]
+|===
+|**Version**
+|v0.9.0-pre2
+
+|**Filename**
+|`dxgi.dll`, `winmm.dll`
+
+|**OS**
+|Windows 11 24H2
+
+|**GPU**
+|Radeon RX 9070 XT
+
+|**Inputs**
+|DLSS, FSR 3.1, XeSS
+
+|**Settings**
+|`Dxgi=false`
+
+|**FG-Settings**
+a|
+* FSR3.1 FG input / DLSSG via Streamline input -> XeFG output
+
+|**Known Issues**
+a|* Spoofing for DLSS(G) inputs (`Dxgi = true`) causes a ~9% performance penalty. Use different inputs or see the notes section for a workaround.
+* XeSS input only works for XeSS or FSR4 output.
+
+|**Notes**
+a|* DLSS(G) inputs without the performance penalty require https://github.com/optiscaler/OptiPatcher[OptiPatcher].
+
+|**Reported By**
+|san9
+|=== 

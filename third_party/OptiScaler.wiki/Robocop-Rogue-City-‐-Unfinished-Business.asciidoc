@@ -1,0 +1,35 @@
+[cols="1,1"]
+|===
+|**Version**
+|v0.7.7-pre12_20250630
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Windows 11 24H2
+
+|**GPU**
+|Radeon RX 7900 XTX
+
+|**Inputs**
+|DLSS 4, FSR 3.1, XeSS 2
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|Nukem's DLSSG or OptiFG (with FG HUD Fix at +1 Value)
+
+|**Known Issues**
+|-
+
+|**Notes**
+a|
+* Although I haven't tested FSR or XeSS inputs, the game recognizes the spoofed Nvidia GPU with no issues. (You'll need `fakenvapi` for this to work.)
+* Using Nukem's DLSS-to-FSRFG works as intended, although, I noticed a slight uptick in both GPU utilization and power consumption with this method. (Your mileage may vary.)
+* Using OptiFG also works as intended, in addition to having lower GPU utilization and power consumption. (Again, your mileage may vary.)
+
+|**Reported By**
+|btanis20
+|=== 

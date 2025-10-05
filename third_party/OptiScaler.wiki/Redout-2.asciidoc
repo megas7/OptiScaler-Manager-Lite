@@ -1,0 +1,32 @@
+[cols="1,1"]
+|===
+|**Version**
+| every OptiScaler version
+
+|**Filename**
+|-
+
+|**OS**
+|every OS
+
+|**GPU**
+|every GPU
+
+|**Inputs**
+|XeSS
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+|Only black screen, no solution or setting works. There's no fix for Redout 2 sadly. It's an Unreal Engine game which has only XeSS, and XeSS UE plugin doesn't provide depth, which breaks all other upscalers (except FSR4). 
+
+|**Notes**
+|https://github.com/optiscaler/OptiScaler/issues/304
+
+|**Reported By**
+|Anon
+|=== 

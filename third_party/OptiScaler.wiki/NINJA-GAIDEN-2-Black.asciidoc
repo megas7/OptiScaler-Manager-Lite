@@ -1,0 +1,34 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.7.7-pre7
+
+|**Filename**
+|`winmm.dll` (probably best for UWP/GP), `dxgi.dll` should also work
+
+|**OS**
+|Win 11
+
+|**GPU**
+|9070XT
+
+|**Inputs**
+|FSR, DLSS, XeSS
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+a|
+* With spoofing active, FSR FG seems to be disabled? - Can use DLSS FG with Nukem in that case (or set `Dxgi=false` in `Optiscaler.ini` if you want native FSR FG with replaced FSR upscaler)
+* UWP GamePass version seems to crash on FSR inputs, so try DLSS or XeSS (also for FSR4 upgrade) - if the game is crashing on boot, try removing the mod and disable upscalers in-game first
+
+|**Notes**
+|Requires `Fakenvapi` for DLSS inputs
+
+|**Reported By**
+|HaydenMad117
+|=== 

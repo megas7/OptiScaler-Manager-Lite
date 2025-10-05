@@ -1,0 +1,37 @@
+[cols="1,1"]
+|===
+|**Version**
+|Optiscaler 0.7.7-pre9
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Windows 11 24H2
+
+|**GPU**
+|AMD Radeon 6950XT
+
+|**Inputs**
+|FSR3.0; DLSS and XeSS are not viable for AMD
+
+|**Settings**
+|`Dxgi=false`
+
+|**FG-Settings**
+|For OptiFG, requires disabling Sharpness in game settings
+
+|**Known Issues**
+a|
+* Spoofing causes blue texture corruptions on AMD/Intel - hence `Dxgi=false` - also solved by using https://github.com/optiscaler/OptiPatcher[OptiPatcher] to expose DLSS inputs
+* Hardcoded FSR 3.0 scale ratios (preset override doesn't work)
+* native coupled FSR 3.0 FG doesn't play well with Optiscaler when replacing upscaler (not smooth, drunken feeling)
+
+|**Notes**
+a|
+* XeSS requires AutoExposure ON, otherwise everything flickers
+* For AMD/Intel, best FG combination is using OptiPatcher + DLSS FG inputs
+
+|**Reported By**
+|TheRazerMD
+|=== 

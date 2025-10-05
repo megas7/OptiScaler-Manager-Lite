@@ -1,0 +1,34 @@
+[cols="1,1"]
+|===
+|**Version**
+|Optiscaler 0.7.0-pre86, 0.7.7-pre9
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Windows 11 24H2
+
+|**GPU**
+|AMD Radeon 6950XT, Intel Arc B580
+
+|**Inputs**
+|DLSS, FSR3, XeSS
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+a|
+* Native coupled FSR 3.0 FG doesn't play well when replacing FSR upscaler with Optiscaler (not smooth, drunken feeling)
+* Spoofing on Intel Arc GPUs seems to cause rainbow artifacts - use `Dxgi=false` in Optiscaler.ini and stick to FSR3 or XeSS inputs - https://github.com/optiscaler/OptiScaler/issues/443[link]
+
+|**Notes**
+|FSR3 hooking works
+
+|**Reported By**
+|TheRazerMD
+|=== 

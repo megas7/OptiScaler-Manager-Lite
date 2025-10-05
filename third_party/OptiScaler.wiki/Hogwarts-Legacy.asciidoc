@@ -1,0 +1,37 @@
+[cols="1,1"]
+|===
+|**Version**
+|Optiscaler 0.7.0-pre93
+
+|**Filename**
+|-
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|7900XT
+
+|**Inputs**
+|FSR, DLSS
+
+|**Settings**
+|`ColorResourceBarrier=4`, `MotionVectorResourceBarrier=8`
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+a|
+Optiscaler doesn't detect Hogwarts correctly as a UE game, and doesn't apply Xmas lights fix +
+https://github.com/user-attachments/assets/80d6a112-9704-4335-8da3-9f9859ba0eda[Xmas lights-sparkles sample]; **XeSS** requires AutoExposure ON to work properly
+
+|**Notes**
+|Setting the above commands in `Optiscaler.ini`/`nvngx.ini` should fix FSR upscaler
+
+|**Reported By**
+|FakeMichau
+|=== 
+
+
+

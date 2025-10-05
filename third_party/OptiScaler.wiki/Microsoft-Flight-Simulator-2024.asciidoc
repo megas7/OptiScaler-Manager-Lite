@@ -1,0 +1,35 @@
+[cols="1,1"]
+|===
+|Version
+|v0.7.0-pre66
+
+|Filename
+|dxgi.dll
+
+|OS
+|Windown 10
+
+|GPU
+|NVIDIA RTX 3070 8GB OC
+
+|Settings
+a|* Render Preset Override: E,F,G, DLSS - Quality
+* Force anisotropic 16x
+* Mipmap Bias set after calculating so it will  be individual
+
+|FG-Settings
+a|* Works well both with and without Allow Async on
+* Recommended HudFix Limit: 1
+
+|Known Issues
+a|* Some ghosting between colors and grayscale, this varies with chosen DLSS preset
+* When calculating MipMap bias frametime might increase to 70, change preset and apply changes to fix
+
+|Notes
+a|When testing with ingame settings High, LOD and TLOD 150 - Frametime: 10.50ms, 94 fps landed in Valletta harbor. Res 2293x960 upscaled to 3440x1440  DLSS Ultra Quality: 12.10ms 82fps)
+
+Can be downloaded from link:https://flightsim.to/file/85872/optiscaler-framegeneration-and-dlss-preset-change-on-the-fly[flightsim.to].
+
+|Reported By
+|Spiffle
+|=== 

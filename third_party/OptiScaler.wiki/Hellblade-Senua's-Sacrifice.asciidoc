@@ -1,0 +1,36 @@
+[cols="1,1"]
+|===
+|**Version**
+|`OptiScaler_v0.7.7-pre7_20250224`
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|`Manjaro` Linux / `Proton`
+
+|**GPU**
+|`AMD 6700XT`
+
+|**Inputs**
+|`DLSS` enabled in-game -> had to set up `fakenvapi` for this
+
+|**Settings**
+|`XeSS` and all `FSR` upscalers work fine
+
+|**FG-Settings**
+|`OptiFG`: `Enabled = true`, `HUDFix = true`, `AllowAsync = true`  
+
+`Framerate`: `FramerateLimit = 80.0` (any value i tried works, and is smoother than using the built in framelimit configured in `GameUserSettings.ini`) 
+
+|**Known Issues**
+|-
+
+|**Notes**
+|`XeSS` looks more smooth, but has about double the frametime cost, and seems to swallow details compared to the `FSR` upscalers -> settled on `FSR 3`
+
+`OptiFG` also has noticeable artifacting, but this game has so many weird effects applied to the image, that it does not look out of place`
+
+|**Reported By**
+|VoodaGod
+|=== 

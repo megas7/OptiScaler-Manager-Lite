@@ -1,0 +1,33 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.7.7-pre13
+
+|**Filename**
+|`d3d12.dll`
+
+|**OS**
+|-
+
+|**GPU**
+|-
+
+|**Inputs**
+|DLSS, XeSS, FSR3.0 (not sure if working)
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+a|
+* Required to install Optiscaler as `d3d12.dll`, otherwise will detect it as modified and reject it
+
+|**Notes**
+|-
+
+|**Reported By**
+|-
+|=== 

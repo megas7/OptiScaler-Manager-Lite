@@ -1,0 +1,32 @@
+[cols="1,1"]
+|===
+|**Version**
+|OptiScaler_v0.7.7-pre7_20250317
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Windows 10 22H2
+
+|**GPU**
+|AMD 9070
+
+|**Inputs**
+|DLSS
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|(not tested)
+
+|**Known Issues**
+|-
+
+|**Notes**
+|-
+
+|**Reported By**
+|ff00005
+|=== 

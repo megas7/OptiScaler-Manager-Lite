@@ -1,0 +1,32 @@
+[cols="1,1"]
+|===
+|**Version**
+|Optiscaler 0.7.7-pre7
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|RX 9600XT
+
+|**Inputs**
+|DLSS, XeSS, FSR2
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+|I couldn't get FSR2 to work. It produce a visual bug where the screen was entirely static except for an outline of the player character
+
+|**Notes**
+|-
+
+|**Reported By**
+|CriticalComposer
+|=== 

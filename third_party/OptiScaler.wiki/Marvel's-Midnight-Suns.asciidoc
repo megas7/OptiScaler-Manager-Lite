@@ -1,0 +1,34 @@
+[cols="1,1"]
+|===
+|**Version**
+| 0.7.7-pre12, 0.7.9
+
+|**Filename**
+| dbghelp.dll
+
+|**OS**
+| Windows 10 22H2
+
+|**GPU**
+| AMD RDNA4
+
+|**Inputs**
+| DLSS
+
+|**Settings**
+| Suggest disabling AA/TXAA in the game settings.
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+| Anti-cheat/anti-tamper normally blocks launch when unexpected .dll files are injected, like Optiscaler - see notes. +
+  Have not tested whether OptiScaler can function as an ASI loader.
+
+|**Notes**
+| Navigate to ``Marvel\'s Midnight Suns\Engine\Binaries\ThirdParty\DbgHelp\`` and rename or delete the existing dbghelp.dll. +
+  OptiScaler should be installed in ``Marvel\'s Midnight Suns\MidnightSuns\Binaries\Win64\`` using `dbghelp.dll` as the selected dll filename.
+
+|**Reported By**
+| JBPhoenix
+|=== 

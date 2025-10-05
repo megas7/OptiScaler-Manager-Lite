@@ -1,0 +1,33 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.7.7-pre11
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|RX 6950XT
+
+|**Inputs**
+|DLSS
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+a|
+* Weird issue where game seems to default to Performance preset (2.0 scaling) every time you restart the game, regardless of the preset you have selected in game settings (verified with Opti overlay) - switching back and forth the preset fixes the issue
+
+|**Notes**
+|Seems to work well in general. You can force DX12 with `-dx12` launch command which might give better performance, especially for FSR4.
+
+|**Reported By**
+|TheRazerMD
+|=== 

@@ -1,0 +1,92 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.7.7-pre13
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|RX 6950XT
+
+|**Inputs**
+|DLSS, XeSS, FSR3.1 (check below)
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+a|
+* FSR 3.1 inputs crash without modifying - either set `EnableFfxInputs=false` _**OR**_ add https://github.com/optiscaler/OptiScaler/wiki/Unreal-Engine-Tweaks#when-using-fsr31-inputs-game-is-crashing[FSR 3.1 UE Engine.ini tweaks]
+* Game doesn't provide any INI configs except GameUserSettings.ini, so you have to **create `Engine.ini`**, and after adding the commands, make it **read-only**, otherwise the game will delete it
+* After that, FSR 3.1 inputs will work (still won't work on Native AA, only hooks on upscaling presets, Quality and below)
+
+|**Notes**
+|-
+
+|**Reported By**
+|TheRazerMD
+|=== 
+
+
+---
+
+[cols="1,1"]
+|===
+|**Version**
+|0.7.7 pre7
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Windows 10
+
+|**GPU**
+|RTX3080 10GB
+
+|**Inputs**
+|DLSS, FSR3, XeSS
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|When using OptiFG with DLSSD (RR) you need `FG Scale Depth to fix DLSS RR`
+
+|**Known Issues**
+|XeSS input is bugged
+
+|**Notes**
+| You need do deactivate vignette to prevent FG borders.
+Add these lines to `Engine.ini` in `%localappdata%  \Habitat\Saved\Config\Windows`
+
+`[SystemSettings]
+r.Tonemapper.Quality=0`
+
+To activate DLSS Ray Reconstruction download nvngx_dlssd.dll and drop it to:
+
+`\Still Wakes the Deep\Habitat\Plugins\NVidia\DLSS\Binaries\ThirdParty\Win64`
+
+then edit `Engine.ini`
+
+`[SystemSettings]
+r.LumenScene.Lighting.AsyncCompute=1
+r.Lumen.DiffuseIndirect.AsyncCompute=1
+r.Lumen.Reflections.Temporal=0
+r.Lumen.Reflections.DownsampleFactor=0
+r.Lumen.Reflections.SmoothBias=1
+r.Lumen.Reflections.MaxRoughnessToTrace=0.27
+r.Lumen.Reflections.AsyncCompute=1
+r.NGX.DLSS.denoisermode=1
+r.Shadow.Denoiser=0`
+
+|**Reported By**
+|Vladzor
+|=== 

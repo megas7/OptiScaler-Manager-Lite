@@ -1,0 +1,32 @@
+[cols="1,1"]
+|===
+|**Version**
+|OptiScaler 0.7.7-pre7
+
+|**Filename**
+|-
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|-
+
+|**Inputs**
+|DLSS, FSR 3.1, XeSS
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+|AMD/Intel users require `Fakenvapi` to avoid crashes
+
+|**Notes**
+|FSR 3.1 FG is coupled, FSR upscaler forced, but can be replaced with Optiscaler; use latest `Nukems` mod 0.122 to ensure proper HUDless.
+
+|**Reported By**
+|Voodoo
+|=== 

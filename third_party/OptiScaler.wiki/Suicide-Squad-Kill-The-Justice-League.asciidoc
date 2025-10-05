@@ -1,0 +1,32 @@
+[cols="1,1"]
+|===
+|**Version**
+|Optiscaler 0.7.7-pre7
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|RX 9600XT
+
+|**Inputs**
+|DLSS, FSR2
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+|Easy Anti-Cheat blocks Optiscaler, causing the game to crash before it even boots.
+
+|**Notes**
+|-
+
+|**Reported By**
+|CriticalComposer
+|=== 

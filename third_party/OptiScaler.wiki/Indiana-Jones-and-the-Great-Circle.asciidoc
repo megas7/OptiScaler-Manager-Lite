@@ -1,0 +1,75 @@
+[cols="1,1"]
+|===
+|**Version**
+|-
+
+|**Filename**
+|`winmm.dll`
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|RX 6950XT
+
+|**Inputs**
+|FSR3.1, XeSS, DLSS (not working for AMD/Intel)
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+a|
+* AMD users may need to set `VulkanExtensionSpoofing=true` in `Optiscaler.ini` to not crash on boot.
+* DLSS inputs are not unlockable on AMD/Intel, spoofing doesn't work due to extra checks
+* RTSS overlay might conflict with Optiscaler - when RTSS active, Opti overlay is invisible, when you hide RTSS, Opti overlay works fine
+* While FSR FG is turned ON, RTSS overlay causes crashes - https://forums.guru3d.com/threads/doom-the-dark-ages-and-overlay-compatibility.456384/[workaround]
+* While FSR FG is turned ON, invoking Opti Overlay causes crashes - workaround is to disable FG first
+
+|**Notes**
+a|
+* Using Optiscaler as `winmm.dll` works
+* Overlay menu sometimes may not invoke properly, but Optiscaler itself works - can edit settings in `Optiscaler.ini` in that case
+* FSR 3.1 FG sadly isn't decoupled, but you can replace FSR with XeSS and still use FSR FG (should work with DLSS also)
+
+|**Reported By**
+|TheRazerMD
+|=== 
+
+---
+
+[cols="1,1"]
+|===
+|**Version**
+|`v0.7.0-pre715`
+
+|**Filename**
+|`OptiScaler.asi`
+
+|**OS**
+|`Windows 11 24H2`
+
+|**GPU**
+|`Nvidia`
+
+|**Inputs**
+|`DLSS`
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+|Menu will be invisible when opened. DLSS disabled in menu when using OptiScaler, but still works when selecting FSR/XeSS in-game (confirmed with overlay). DLSSG to FSR3 works separately when not using OptiScaler.
+
+|**Notes**
+|Using ASI method because of https://www.nexusmods.com/indianajonesandthegreatcircle/mods/56[GreatCircleFix], which uses ASI loader. UWP version used.
+
+|**Reported By**
+|Youqi
+|=== 

@@ -1,0 +1,32 @@
+[cols="1,1"]
+|===
+|**Version**
+|Optiscaler 0.6.7
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|-
+
+|**GPU**
+|RX 6950XT
+
+|**Inputs**
+|DLSS
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+|DLSS FG doesn't provide a HUDless resource, so using Nukem's `dlssg-to-fsr3` mod will result in HUD ghosting, but Optiscaler FG and HUDfix works fine
+
+|**Notes**
+|Fakenvapi AL2 injection worked fine (version 1.1)
+
+|**Reported By**
+|TheRazerMD
+|=== 

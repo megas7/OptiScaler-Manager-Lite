@@ -1,0 +1,34 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.7.7-pre12
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|-
+
+|**GPU**
+|AMD/Intel
+
+|**Inputs**
+|DLSS, FSR 3.0 (check below)
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+a|
+* To fix crashes on boot, disable FSR3 inputs all together (`fsr3=false` in pre9, or `EnableFsr3Inputs=false` in pre12 Nightly) and use DLSS inputs.
+* or if you want to use FSR 3.0 inputs, then requires https://github.com/optiscaler/OptiScaler/wiki/Unreal-Engine-Tweaks#when-using-fsr3-inputs-game-is-crashing[this 3.0 inputs crashing fix], otherwise crash on boot
+
+|**Notes**
+|-
+
+|**Reported By**
+|-
+|=== 

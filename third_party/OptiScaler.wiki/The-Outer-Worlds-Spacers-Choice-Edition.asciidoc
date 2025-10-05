@@ -1,0 +1,36 @@
+[cols="1,1"]
+|===
+|**Version**
+|-
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Windows 11 24H2
+
+|**GPU**
+|-
+
+|**Inputs**
+|FSR2 only game
+
+|**Settings**
+|`Dxgi=false` for **AMD/Intel**
+
+|**FG-Settings**
+|
+
+|**Known Issues**
+a|
+* If 1.0 ratio disables upscaling, set to atleast 1.01.
+* XeSS might need **Auto Exposure ON** if flickering
+* If FSR2 inputs aren't working, set `Fsr2Pattern=true` in `Optiscaler.ini`.
+
+
+|**Notes**
+|Game itself doesn't have DLSS, but to hook FSR2 inputs requires following the `Manual` installation steps, or select **No** to DLSS inputs on **AMD/Intel** (**Nvidia users** need to also provide the usual `nvngx_dlss.dll` to use DLSS). 
+
+|**Reported By**
+|TheRazerMD
+|=== 

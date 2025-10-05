@@ -1,0 +1,37 @@
+[cols="1,1"]
+|===
+|**Version**
+|OptiScaler 0.7.8
+
+|**Filename**
+|`dxgi.dll`, `winmm.dll`
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|RX 6950XT
+
+|**Inputs**
+|DLSS, FSR3.1
+
+|**Settings**
+|`Dxgi=false` to stop crashing for just FSR inputs; for DLSS inputs - requires `Fakenvapi` for **AMD/Intel**
+
+|**FG-Settings**
+|Nukems should be working fine now since DLSS-FG was added
+
+|**Known Issues**
+a|
+* For OptiScaler to work, requires **disabling Battleye** anticheat - check the screenshot below
+* Upscaler presets are hardcoded - overriding won't work
+
+|**Notes**
+|Both DLSS and FSR3.1 inputs seem to work fine, AL2 injection with Fakenvapi also seems to work well
+
+|**Reported By**
+|TheRazerMD, san9
+|=== 
+
+image::https://github.com/user-attachments/assets/eebdd4b8-1aad-44bc-95fe-f14b90d27c77[GTA5Battleye]
+

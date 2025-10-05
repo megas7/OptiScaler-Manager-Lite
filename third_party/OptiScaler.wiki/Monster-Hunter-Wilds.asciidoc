@@ -1,0 +1,35 @@
+[cols="1,1"]
+|===
+|**Version**
+|OptiScaler 0.7.7-pre12
+
+|**Filename**
+|-
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|-
+
+|**Inputs**
+|DLSS + DLSS FG, FSR3.1 + FSR FG, XeSS
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+a|
+* With OptiFG setting, game used to hang after closing  
+* If crashing before or during shader compilation, use `Dxgi=false` on **AMD/Intel** as the game does not seem to like spoofing (no DLSS inputs this way) - use FSR 3.1 or XeSS inputs
+* **Disable Motion Blur** as it messes with FG options - causes graphical artifacts for DLSSG SL inputs
+
+|**Notes**
+|Requires **REFramework** to work
+
+|**Reported By**
+|-
+|=== 

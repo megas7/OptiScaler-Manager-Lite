@@ -1,0 +1,32 @@
+[cols="1,1"]
+|===
+|**Version**
+|`0.9.0 pre2`, `0.7.9`
+
+|**Filename**
+|`dxgi.dll`, `winmm.dll`
+
+|**OS**
+|Win11 24H2,23H2
+
+|**GPU**
+|RX 6800XT, RX 9070XT
+
+|**Inputs**
+|DLSS, FSR3.1 (RDNA2/3/4 only) , XESS(Intel gpus only)
+
+|**Settings**
+|
+
+|**FG-Settings**
+|
+
+|**Known Issues**
+|Anisotropic filtering and mip map LOD Bias broken with 0.9.0. Works fine with 0.7.9. 
+
+|**Notes**
+|DLSSG > XeFG is has lower latency than DLSSG>FSRFG when fps is uncapped.
+
+|**Reported By**
+|ID9442
+|=== 

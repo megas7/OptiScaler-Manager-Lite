@@ -1,0 +1,30 @@
+[cols="1,1"]
+|===
+|**Version**
+|v0.7.0-pre71
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Windows 11
+
+|**GPU**
+|NVIDIA 
+
+|**Settings**
+|- N/A
+
+|**FG-Settings**
+|- Hud Fix 1, Allow Async
+
+|**Known Issues**
+a|
+* `City Glow Effect -> Off` required to fix crashes with Opti if present
+
+|**Notes**
+|- Launch Command `-dx12` on Steam to force DX12
+
+|**Reported By**
+|Switchwise
+|===

@@ -1,0 +1,34 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.7.9
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|RX 6950XT
+
+|**Inputs**
+|DLSS, XeSS, FSR3.1 (check below)
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+a|
+* Game crashes due to some old FSR3 inputs - to fix, set `EnableFsr3Inputs=false` in **OptiScaler.ini**
+* FSR 3.1 inputs require creating  **Engine.ini** in regular location and adding https://github.com/optiscaler/OptiScaler/wiki/Unreal-Engine-Tweaks#when-using-fsr31-inputs-game-is-crashing[this 3.1 inputs fix]
+
+|**Notes**
+|Recommended to just use OptiPatcher if AMD/Intel and use DLSS inputs
+
+|**Reported By**
+|TheRazerMD
+|=== 

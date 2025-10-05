@@ -1,0 +1,37 @@
+[cols="1,1"]
+|===
+|**Version**
+|Optiscaler 0.7.7-pre1, 0.7.7-pre12
+
+|**Filename**
+|`dxgi.dll`
+
+|**OS**
+|Win 11 24H2
+
+|**GPU**
+|6950XT
+
+|**Inputs**
+|XeSS, DLSS
+
+|**Settings**
+|Can use `Dxgi=false` if using AMD/Intel since XeSS inputs work fine, no spoofing needed. Check notes for DLSS inputs
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+|As previous game, might be recommended to disable in-game Depth of Field, Film Grain if present
+
+|**Notes**
+a|
+* XeSS inputs work fine. 
+* For DLSS inputs, requires https://github.com/FakeMichau/fakenvapi[FakeNVapi] for properly exposing DLSS. 
+* If you get weird Xmas artifacts, try disabling in-game Screen Effects.
+
+|**Reported By**
+|TheRazerMD
+|=== 
+
+

@@ -1,0 +1,39 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.7.7-pre9_Daria build
+
+|**Filename**
+|`dxgi.dll`, `Optiscaler.asi`
+
+|**OS**
+|Windows 11 24H2
+
+|**GPU**
+|`Intel Arc 140V (MSI Claw 8)` `NVIDIA Geforce GTX 1660 Ti Mobile`
+
+|**Inputs**
+|DLSS, XeSS
+
+|**Settings**
+|
+
+|**FG-Settings**
+|OptiFG / Hudfix 1 / Async on
+
+|**Known Issues**
+a|
+* **Ultra Quality** presets seem to have the most issues - flickering and increased crashing
+* Avoid using Ultra Quality with FSR4 - broken rendering
+* Flickering with FSR4 can be "fixed" with `FSR4 non-linear sRGB option` enabled (cutscenes affected) - seems to cause more ghosting in dark areas on the other hand - recommended to just use another preset or set a custom preset ratio
+* Game has custom post-processing shaders and does something weird with monitor resolutions - most likely the reason for flickering on certain presets 
+
+|**Notes**
+a|
+* Having https://www.nexusmods.com/clairobscurexpedition33/mods/24[Lyall ClairObscurFix MOD] is essential for HudFix to disable forced post-process sharpening
+* XeSS inputs are not useable with OptiFG (no depth)
+
+
+|**Reported By**
+|onehoon, Astolfo, merlinch
+|=== 

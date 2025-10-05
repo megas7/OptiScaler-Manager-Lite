@@ -1,0 +1,32 @@
+[cols="1,1"]
+|===
+|**Version**
+|0.7.7-pre7
+
+|**Filename**
+|-
+
+|**OS**
+|-
+
+|**GPU**
+|-
+
+|**Inputs**
+|DLSS, XeSS, FSR (not working)
+
+|**Settings**
+|-
+
+|**FG-Settings**
+|-
+
+|**Known Issues**
+|FSR inputs don't work
+
+|**Notes**
+|-
+
+|**Reported By**
+|-
+|=== 
