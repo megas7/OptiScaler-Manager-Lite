@@ -1,5 +1,9 @@
 #pragma once
 
+#ifndef IDC_STATIC
+#define IDC_STATIC (-1)
+#endif
+
 #define IDC_MAINMENU 1001
 
 #define IDM_FILE_RESCAN 2001
