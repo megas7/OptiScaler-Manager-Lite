@@ -65,7 +65,7 @@ HBITMAP LocalMeta::IconAsCover(const std::wstring& exe_path, int width, int heig
   DeleteObject(background);
 
   // Accent band at the top for a subtle frame.
-  RECT header = {0, 0, width, (std::max)(20, height / 12)};
+  RECT header = {0, 0, width, std::max(20, height / 12)};
   HBRUSH header_brush = CreateSolidBrush(RGB(64, 64, 88));
   FillRect(dc, &header, header_brush);
   DeleteObject(header_brush);
@@ -80,11 +80,12 @@ HBITMAP LocalMeta::IconAsCover(const std::wstring& exe_path, int width, int heig
 
   HICON icon = LoadIconForExecutable(exe_path);
   if (icon) {
-    const int desired_icon_size = (std::max)(96, (std::min)(width - 32, height - 160));
+    const int desired_icon_size = std::max(96, std::min(width - 32, height - 160));
     const int icon_x = (width - desired_icon_size) / 2;
-    const int icon_y = header.bottom + (height - header.bottom - desired_icon_size) / 2 - 24;
-    DrawIconEx(dc, icon_x, (std::max)(header.bottom + 8, icon_y), icon, desired_icon_size, desired_icon_size, 0, nullptr,
-               DI_NORMAL);
+    const int icon_y = static_cast<int>(header.bottom) +
+                       (height - static_cast<int>(header.bottom) - desired_icon_size) / 2 - 24;
+    const int icon_top = std::max(static_cast<int>(header.bottom) + 8, icon_y);
+    DrawIconEx(dc, icon_x, icon_top, icon, desired_icon_size, desired_icon_size, 0, nullptr, DI_NORMAL);
     DestroyIcon(icon);
   }
 
